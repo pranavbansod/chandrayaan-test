@@ -26,6 +26,8 @@ public class Chandrayaan {
             yPos--;
         else if ("U".equalsIgnoreCase(direction))
             zPos++;
+        else if ("D".equalsIgnoreCase(direction))
+            zPos--;
     }
 
     public int getXPosition() {
