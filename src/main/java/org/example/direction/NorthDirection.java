@@ -2,15 +2,17 @@ package org.example.direction;
 
 import org.example.Direction;
 
+import static org.example.Direction.N;
+
 public class NorthDirection extends DirectionAbstract {
+    private final Direction value;
 
-    private final Direction value = Direction.N;
+    private NorthDirection(Direction value) {
 
-    private NorthDirection() {
-
+        this.value = value;
     }
     public static NorthDirection createInstance() {
-        return new NorthDirection();
+        return new NorthDirection(N);
     }
 
     @Override

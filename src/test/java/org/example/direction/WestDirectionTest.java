@@ -30,7 +30,7 @@ class WestDirectionTest {
     }
 
     @Test
-    void shouldGetSoutnDirectionOnLeft() {
+    void shouldGetSouthDirectionOnLeft() {
         DirectionAbstract leftDirection = westDirection.getLeftDirection();
 
         Assertions.assertEquals(SouthDirection.class, leftDirection.getClass());

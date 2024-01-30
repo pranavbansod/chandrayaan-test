@@ -2,14 +2,16 @@ package org.example.direction;
 
 import org.example.Direction;
 
+import static org.example.Direction.E;
+
 public class EastDirection extends  DirectionAbstract{
+    private final Direction value;
 
-    private final Direction value = Direction.E;
-
-    private EastDirection() {
+    private EastDirection(Direction value) {
+        this.value = value;
     }
     public static EastDirection createInstance() {
-        return new EastDirection();
+        return new EastDirection(E);
     }
     @Override
     public DirectionAbstract getRightDirection() {
