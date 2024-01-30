@@ -211,6 +211,29 @@ class ChandrayaanTest {
 
             Assertions.assertEquals(0, chandrayaan.getXPosition());
         }
+
+        @Test
+        void shouldMoveYPosFrom0To1ForBCommandFacingSouth() {
+
+            Chandrayaan chandrayaan = new Chandrayaan(0, 0, 0, "S");
+            List<String> commands = List.of("b");
+
+            chandrayaan.executeCommands(commands);
+
+            Assertions.assertEquals(1, chandrayaan.getYPosition());
+        }
+
+        @Test
+        void shouldMoveYPosFromNeg1To0ForBCommandFacingSouth() {
+
+            Chandrayaan chandrayaan = new Chandrayaan(0, -1, 0, "S");
+            List<String> commands = List.of("b");
+
+            chandrayaan.executeCommands(commands);
+
+            Assertions.assertEquals(0, chandrayaan.getYPosition());
+        }
+
     }
 
     @Nested
