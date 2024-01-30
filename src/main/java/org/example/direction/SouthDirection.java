@@ -31,8 +31,8 @@ public class SouthDirection extends DirectionAbstract{
     }
 
     @Override
-    public void moveBackward() {
-
+    public void moveBackward(CoOrdinates coOrdinates) {
+        coOrdinates.incrementY();
     }
 
     public Direction getValue() {

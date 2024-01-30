@@ -48,4 +48,15 @@ class WestDirectionTest {
 
     }
 
+    @Test
+    void shouldMoveBackwardInNegativeXDirection() {
+        CoOrdinates coOrdinates = new CoOrdinates(0, 0, 0);
+
+        westDirection.moveBackward(coOrdinates);
+
+        CoOrdinates expectedCoOrdinates = new CoOrdinates(1, 0, 0);
+        Assertions.assertEquals(expectedCoOrdinates, coOrdinates);
+
+    }
+
 }

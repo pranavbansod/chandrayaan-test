@@ -33,8 +33,8 @@ public class WestDirection extends DirectionAbstract {
     }
 
     @Override
-    public void moveBackward() {
-
+    public void moveBackward(CoOrdinates coOrdinates) {
+        coOrdinates.incrementX();
     }
 
     public Direction getValue() {

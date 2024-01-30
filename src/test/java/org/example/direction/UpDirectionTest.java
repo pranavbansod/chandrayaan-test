@@ -47,4 +47,15 @@ class UpDirectionTest {
 
     }
 
+    @Test
+    void shouldMoveBackwardInZDirection() {
+        CoOrdinates coOrdinates = new CoOrdinates(0, 0, 0);
+
+        upDirection.moveBackward(coOrdinates);
+
+        CoOrdinates expectedCoOrdinates = new CoOrdinates(0, 0, -1);
+        Assertions.assertEquals(expectedCoOrdinates, coOrdinates);
+
+    }
+
 }

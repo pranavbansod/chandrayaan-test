@@ -32,8 +32,8 @@ public class NorthDirection extends DirectionAbstract {
     }
 
     @Override
-    public void moveBackward() {
-
+    public void moveBackward(CoOrdinates coOrdinates) {
+        coOrdinates.decrementY();
     }
 
     public Direction getValue() {

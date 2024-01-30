@@ -47,4 +47,16 @@ class SouthDirectionTest {
         Assertions.assertEquals(expectedCoOrdinates, coOrdinates);
 
     }
+
+    @Test
+    void shouldMoveBackwardInNegativeYDirection() {
+        CoOrdinates coOrdinates = new CoOrdinates(0, 0, 0);
+
+        southDirection.moveBackward(coOrdinates);
+
+        CoOrdinates expectedCoOrdinates = new CoOrdinates(0, 1, 0);
+        Assertions.assertEquals(expectedCoOrdinates, coOrdinates);
+
+    }
+
 }
