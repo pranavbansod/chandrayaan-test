@@ -5,7 +5,7 @@ import java.util.List;
 public class Chandrayaan {
     private int xPos;
     private int yPos;
-    private final int zPos;
+    private int zPos;
     private final String direction;
 
     public Chandrayaan(int xPos, int yPos, int zPos, String direction) {
@@ -24,6 +24,8 @@ public class Chandrayaan {
             xPos--;
         else if ("S".equalsIgnoreCase(direction))
             yPos--;
+        else if ("U".equalsIgnoreCase(direction))
+            zPos++;
     }
 
     public int getXPosition() {
@@ -32,5 +34,9 @@ public class Chandrayaan {
 
     public int getYPosition() {
         return yPos;
+    }
+
+    public int getZPosition() {
+        return zPos;
     }
 }
