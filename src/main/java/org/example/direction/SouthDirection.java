@@ -16,12 +16,12 @@ public class SouthDirection extends DirectionAbstract{
 
     @Override
     public DirectionAbstract getRightDirection() {
-        return null;
+        return WestDirection.createInstance();
     }
 
     @Override
     public DirectionAbstract getLeftDirection() {
-        return null;
+        return EastDirection.createInstance();
     }
 
     @Override
