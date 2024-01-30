@@ -35,6 +35,11 @@ public class Chandrayaan {
                 direction = "S";
             else
                 direction = "N";
+        } else if ("S".equalsIgnoreCase(direction)) {
+            if ("R".equalsIgnoreCase(command))
+                direction = "W";
+            else
+                direction = "E";
         }
     }
 
