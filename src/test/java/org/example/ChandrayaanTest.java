@@ -50,4 +50,26 @@ class ChandrayaanTest {
 
         Assertions.assertEquals(2, chandrayaan.getXPosition());
     }
+
+    @Test
+    void shouldMoveYPos0ToNeg1ForFCommandFacingWest() {
+
+        Chandrayaan chandrayaan = new Chandrayaan(0, 0, 0, "W");
+        List<String> commands = List.of("f");
+
+        chandrayaan.executeCommand(commands);
+
+        Assertions.assertEquals(-1, chandrayaan.getXPosition());
+    }
+
+    @Test
+    void shouldMoveXPosFromNeg1ToNeg2ForFCommandFacingWest() {
+
+        Chandrayaan chandrayaan = new Chandrayaan(-1, 0, 0, "W");
+        List<String> commands = List.of("f");
+
+        chandrayaan.executeCommand(commands);
+
+        Assertions.assertEquals(-2, chandrayaan.getXPosition());
+    }
 }

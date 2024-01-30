@@ -18,8 +18,11 @@ public class Chandrayaan {
     public void executeCommand(List<String> commands) {
         if ("N".equalsIgnoreCase(direction))
             yPos++;
-        else
+        else if ("E".equalsIgnoreCase(direction))
             xPos++;
+        else if ("W".equalsIgnoreCase(direction))
+            xPos--;
+
     }
 
     public int getXPosition() {
