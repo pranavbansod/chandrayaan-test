@@ -25,10 +25,17 @@ public class Chandrayaan {
     }
 
     private void changeDirection(String command) {
-        if ("R".equalsIgnoreCase(command))
-            direction = "E";
-        else
-            direction = "W";
+        if ("N".equalsIgnoreCase(direction)) {
+            if ("R".equalsIgnoreCase(command))
+                direction = "E";
+            else
+                direction = "W";
+        } else if ("E".equalsIgnoreCase(direction)) {
+            if ("R".equalsIgnoreCase(command))
+                direction = "S";
+            else
+                direction = "N";
+        }
     }
 
     private void moveForward() {
