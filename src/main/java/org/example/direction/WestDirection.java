@@ -2,23 +2,28 @@ package org.example.direction;
 
 import org.example.Direction;
 
-public class WestDirection extends  DirectionAbstract{
+import static org.example.Direction.W;
 
-    private final Direction value = Direction.W;
+public class WestDirection extends DirectionAbstract {
 
-    private WestDirection() {
+    private final Direction value;
+
+    private WestDirection(Direction value) {
+        this.value = value;
     }
+
     public static WestDirection createInstance() {
-        return new WestDirection();
+        return new WestDirection(W);
     }
+
     @Override
     public DirectionAbstract getRightDirection() {
-        return null;
+        return NorthDirection.createInstance();
     }
 
     @Override
     public DirectionAbstract getLeftDirection() {
-        return null;
+        return SouthDirection.createInstance();
     }
 
     @Override
@@ -29,5 +34,9 @@ public class WestDirection extends  DirectionAbstract{
     @Override
     public void moveBackward() {
 
+    }
+
+    public Direction getValue() {
+        return value;
     }
 }
