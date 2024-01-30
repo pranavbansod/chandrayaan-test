@@ -15,7 +15,7 @@ public class Chandrayaan {
         this.direction = direction;
     }
 
-    public void executeCommand(List<String> commands) {
+    public void executeCommands(List<String> commands) {
         String command = commands.get(0);
         if (commands.get(0).equalsIgnoreCase("F")) {
             if ("N".equalsIgnoreCase(direction))

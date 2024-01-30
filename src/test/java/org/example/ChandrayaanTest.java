@@ -13,7 +13,7 @@ class ChandrayaanTest {
         Chandrayaan chandrayaan = new Chandrayaan(0, 0, 0, "N");
         List<String> commands = List.of("f");
 
-        chandrayaan.executeCommand(commands);
+        chandrayaan.executeCommands(commands);
 
         Assertions.assertEquals(1, chandrayaan.getYPosition());
     }
@@ -24,7 +24,7 @@ class ChandrayaanTest {
         Chandrayaan chandrayaan = new Chandrayaan(0, 1, 0, "N");
         List<String> commands = List.of("f");
 
-        chandrayaan.executeCommand(commands);
+        chandrayaan.executeCommands(commands);
 
         Assertions.assertEquals(2, chandrayaan.getYPosition());
     }
@@ -35,7 +35,7 @@ class ChandrayaanTest {
         Chandrayaan chandrayaan = new Chandrayaan(0, 0, 0, "E");
         List<String> commands = List.of("f");
 
-        chandrayaan.executeCommand(commands);
+        chandrayaan.executeCommands(commands);
 
         Assertions.assertEquals(1, chandrayaan.getXPosition());
     }
@@ -46,7 +46,7 @@ class ChandrayaanTest {
         Chandrayaan chandrayaan = new Chandrayaan(1, 0, 0, "E");
         List<String> commands = List.of("f");
 
-        chandrayaan.executeCommand(commands);
+        chandrayaan.executeCommands(commands);
 
         Assertions.assertEquals(2, chandrayaan.getXPosition());
     }
@@ -57,7 +57,7 @@ class ChandrayaanTest {
         Chandrayaan chandrayaan = new Chandrayaan(0, 0, 0, "W");
         List<String> commands = List.of("f");
 
-        chandrayaan.executeCommand(commands);
+        chandrayaan.executeCommands(commands);
 
         Assertions.assertEquals(-1, chandrayaan.getXPosition());
     }
@@ -68,7 +68,7 @@ class ChandrayaanTest {
         Chandrayaan chandrayaan = new Chandrayaan(-1, 0, 0, "W");
         List<String> commands = List.of("f");
 
-        chandrayaan.executeCommand(commands);
+        chandrayaan.executeCommands(commands);
 
         Assertions.assertEquals(-2, chandrayaan.getXPosition());
     }
@@ -79,7 +79,7 @@ class ChandrayaanTest {
         Chandrayaan chandrayaan = new Chandrayaan(0, 0, 0, "S");
         List<String> commands = List.of("f");
 
-        chandrayaan.executeCommand(commands);
+        chandrayaan.executeCommands(commands);
 
         Assertions.assertEquals(-1, chandrayaan.getYPosition());
     }
@@ -90,7 +90,7 @@ class ChandrayaanTest {
         Chandrayaan chandrayaan = new Chandrayaan(0, -1, 0, "S");
         List<String> commands = List.of("f");
 
-        chandrayaan.executeCommand(commands);
+        chandrayaan.executeCommands(commands);
 
         Assertions.assertEquals(-2, chandrayaan.getYPosition());
     }
@@ -101,7 +101,7 @@ class ChandrayaanTest {
         Chandrayaan chandrayaan = new Chandrayaan(0, 0, 0, "U");
         List<String> commands = List.of("f");
 
-        chandrayaan.executeCommand(commands);
+        chandrayaan.executeCommands(commands);
 
         Assertions.assertEquals(1, chandrayaan.getZPosition());
     }
@@ -112,7 +112,7 @@ class ChandrayaanTest {
         Chandrayaan chandrayaan = new Chandrayaan(0, 0, 1, "U");
         List<String> commands = List.of("f");
 
-        chandrayaan.executeCommand(commands);
+        chandrayaan.executeCommands(commands);
 
         Assertions.assertEquals(2, chandrayaan.getZPosition());
     }
@@ -123,7 +123,7 @@ class ChandrayaanTest {
         Chandrayaan chandrayaan = new Chandrayaan(0, 0, 0, "D");
         List<String> commands = List.of("f");
 
-        chandrayaan.executeCommand(commands);
+        chandrayaan.executeCommands(commands);
 
         Assertions.assertEquals(-1, chandrayaan.getZPosition());
     }
@@ -134,7 +134,7 @@ class ChandrayaanTest {
         Chandrayaan chandrayaan = new Chandrayaan(0, 0, -1, "D");
         List<String> commands = List.of("f");
 
-        chandrayaan.executeCommand(commands);
+        chandrayaan.executeCommands(commands);
 
         Assertions.assertEquals(-2, chandrayaan.getZPosition());
     }
@@ -145,7 +145,7 @@ class ChandrayaanTest {
         Chandrayaan chandrayaan = new Chandrayaan(0, 0, 0, "N");
         List<String> commands = List.of("r");
 
-        chandrayaan.executeCommand(commands);
+        chandrayaan.executeCommands(commands);
 
         Assertions.assertEquals("E", chandrayaan.getDirection());
     }
@@ -156,7 +156,7 @@ class ChandrayaanTest {
         Chandrayaan chandrayaan = new Chandrayaan(0, 0, 0, "N");
         List<String> commands = List.of("l");
 
-        chandrayaan.executeCommand(commands);
+        chandrayaan.executeCommands(commands);
 
         Assertions.assertEquals("W", chandrayaan.getDirection());
     }
