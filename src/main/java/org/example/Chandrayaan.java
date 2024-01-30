@@ -1,27 +1,23 @@
 package org.example;
 
+import org.example.direction.DirectionAbstract;
+
 import java.util.List;
 
-import static org.example.Direction.N;
-import static org.example.Direction.E;
-import static org.example.Direction.W;
-import static org.example.Direction.S;
-import static org.example.Direction.U;
-import static org.example.Direction.D;
-
 public class Chandrayaan {
-    private Direction direction;
     private final CoOrdinates coOrdinates;
+    private DirectionAbstract direction;
 
-    public Chandrayaan(CoOrdinates coOrdinates, Direction direction) {
+    public Chandrayaan(CoOrdinates coOrdinates, DirectionAbstract direction) {
         this.direction = direction;
         this.coOrdinates = coOrdinates;
     }
+
     public CoOrdinates getCoOrdinates() {
         return coOrdinates;
     }
 
-    public Direction getDirection() {
+    public DirectionAbstract getDirection() {
         return direction;
     }
 
@@ -33,46 +29,26 @@ public class Chandrayaan {
         if (isMoveCommand(command)) {
             move(command);
         } else {
-            direction = direction.changeDirection(command);
+            direction = changeDirection(command);
         }
+    }
+
+    private DirectionAbstract changeDirection(String command) {
+        if (isRightCommand(command))
+            return direction.getRightDirection();
+        return direction.getLeftDirection();
+    }
+
+    private boolean isRightCommand(String command) {
+        return "R".equalsIgnoreCase(command);
     }
 
     private void move(String command) {
         if (isForwardCommand(command)) {
-            moveForward();
+            direction.moveForward(coOrdinates);
         } else {
-            moveBackward();
+            direction.moveBackward(coOrdinates);
         }
-    }
-
-    private void moveForward() {
-        if (N.equals(direction))
-            coOrdinates.incrementY();
-        else if (E.equals(direction))
-            coOrdinates.incrementX();
-        else if (W.equals(direction))
-            coOrdinates.decrementX();
-        else if (S.equals(direction))
-            coOrdinates.decrementY();
-        else if (U.equals(direction))
-            coOrdinates.incrementZ();
-        else if (D.equals(direction))
-            coOrdinates.decrementZ();
-    }
-
-    private void moveBackward() {
-        if (N.equals(direction))
-            coOrdinates.decrementY();
-        else if (E.equals(direction))
-            coOrdinates.decrementX();
-        else if (W.equals(direction))
-            coOrdinates.incrementX();
-        else if (S.equals(direction))
-            coOrdinates.incrementY();
-        else if (U.equals(direction))
-            coOrdinates.decrementZ();
-        else if (D.equals(direction))
-            coOrdinates.incrementZ();
     }
 
     private boolean isMoveCommand(String command) {
