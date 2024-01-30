@@ -3,16 +3,10 @@ package org.example;
 import java.util.List;
 
 public class Chandrayaan {
-    private int xPos;
-    private int yPos;
-    private int zPos;
     private String direction;
     private final CoOrdinates coOrdinates;
 
-    public Chandrayaan(int xPos, int yPos, int zPos, String direction, CoOrdinates coOrdinates) {
-        this.xPos = xPos;
-        this.yPos = yPos;
-        this.zPos = zPos;
+    public Chandrayaan(String direction, CoOrdinates coOrdinates) {
         this.direction = direction;
         this.coOrdinates = coOrdinates;
     }
