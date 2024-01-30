@@ -5,32 +5,32 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import static org.example.Direction.U;
+import static org.example.Direction.D;
 
-class UpDirectionTest {
-    private UpDirection upDirection;
+class DownDirectionTest {
+    private DownDirection downDirection;
 
     @BeforeEach
     void setUp() {
-        upDirection = UpDirection.createInstance();
+        downDirection = DownDirection.createInstance();
     }
 
     @Test
-    void shouldGetValueAsU() {
-        Direction value = upDirection.getValue();
-        Assertions.assertEquals(U, value);
+    void shouldGetValueAsD() {
+        Direction value = downDirection.getValue();
+        Assertions.assertEquals(D, value);
     }
 
     @Test
     void shouldGetSouthDirectionOnRight() {
-        DirectionAbstract rightDirection = upDirection.getRightDirection();
+        DirectionAbstract rightDirection = downDirection.getRightDirection();
 
         Assertions.assertEquals(EastDirection.class, rightDirection.getClass());
     }
 
     @Test
     void shouldGetNorthDirectionOnLeft() {
-        DirectionAbstract leftDirection = upDirection.getLeftDirection();
+        DirectionAbstract leftDirection = downDirection.getLeftDirection();
 
         Assertions.assertEquals(WestDirection.class, leftDirection.getClass());
     }
