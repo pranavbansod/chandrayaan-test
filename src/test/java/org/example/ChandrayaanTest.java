@@ -33,7 +33,7 @@ class ChandrayaanTest {
         }
 
         @Test
-        void shouldMoveYPosTo1ForFCommandFacingEast() {
+        void shouldMoveXPosTo1ForFCommandFacingEast() {
 
             Chandrayaan chandrayaan = new Chandrayaan(0, 0, 0, "E");
             List<String> commands = List.of("f");
@@ -55,7 +55,7 @@ class ChandrayaanTest {
         }
 
         @Test
-        void shouldMoveYPos0ToNeg1ForFCommandFacingWest() {
+        void shouldMoveXPos0ToNeg1ForFCommandFacingWest() {
 
             Chandrayaan chandrayaan = new Chandrayaan(0, 0, 0, "W");
             List<String> commands = List.of("f");
@@ -183,6 +183,28 @@ class ChandrayaanTest {
         void shouldMoveXPosFrom1To0ForBCommandFacingEast() {
 
             Chandrayaan chandrayaan = new Chandrayaan(1, 0, 0, "E");
+            List<String> commands = List.of("b");
+
+            chandrayaan.executeCommands(commands);
+
+            Assertions.assertEquals(0, chandrayaan.getXPosition());
+        }
+
+        @Test
+        void shouldMoveXPos0To1ForBCommandFacingWest() {
+
+            Chandrayaan chandrayaan = new Chandrayaan(0, 0, 0, "W");
+            List<String> commands = List.of("b");
+
+            chandrayaan.executeCommands(commands);
+
+            Assertions.assertEquals(1, chandrayaan.getXPosition());
+        }
+
+        @Test
+        void shouldMoveXPosFromNeg1To0ForBCommandFacingWest() {
+
+            Chandrayaan chandrayaan = new Chandrayaan(-1, 0, 0, "W");
             List<String> commands = List.of("b");
 
             chandrayaan.executeCommands(commands);
