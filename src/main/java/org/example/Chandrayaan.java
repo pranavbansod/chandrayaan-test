@@ -80,6 +80,8 @@ public class Chandrayaan {
             xPos++;
         else if ("S".equalsIgnoreCase(direction))
             yPos++;
+        else if ("U".equalsIgnoreCase(direction))
+            zPos--;
     }
 
     private boolean isMoveCommand(String command) {
