@@ -61,32 +61,56 @@ public class Chandrayaan {
 
     private void moveForward() {
         if ("N".equalsIgnoreCase(direction))
-            yPos++;
+            incrementY();
         else if ("E".equalsIgnoreCase(direction))
-            xPos++;
+            incrementX();
         else if ("W".equalsIgnoreCase(direction))
-            xPos--;
+            decrementX();
         else if ("S".equalsIgnoreCase(direction))
-            yPos--;
+            decrementY();
         else if ("U".equalsIgnoreCase(direction))
-            zPos++;
+            incrementZ();
         else if ("D".equalsIgnoreCase(direction))
-            zPos--;
+            decrementZ();
     }
 
     private void moveBackward() {
         if ("N".equalsIgnoreCase(direction))
-            yPos--;
+            decrementY();
         else if ("E".equalsIgnoreCase(direction))
-            xPos--;
+            decrementX();
         else if ("W".equalsIgnoreCase(direction))
-            xPos++;
+            incrementX();
         else if ("S".equalsIgnoreCase(direction))
-            yPos++;
+            incrementY();
         else if ("U".equalsIgnoreCase(direction))
-            zPos--;
+            decrementZ();
         else if ("D".equalsIgnoreCase(direction))
-            zPos++;
+            incrementZ();
+    }
+
+    private void incrementX() {
+        xPos++;
+    }
+
+    private void decrementX() {
+        xPos--;
+    }
+
+    private void incrementY() {
+        yPos++;
+    }
+
+    private void decrementY() {
+        yPos--;
+    }
+
+    private void incrementZ() {
+        zPos++;
+    }
+
+    private void decrementZ() {
+        zPos--;
     }
 
     private boolean isMoveCommand(String command) {
