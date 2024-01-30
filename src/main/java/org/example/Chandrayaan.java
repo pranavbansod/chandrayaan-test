@@ -33,31 +33,7 @@ public class Chandrayaan {
         if (isMoveCommand(command)) {
             move(command);
         } else {
-            changeDirection(command);
-        }
-    }
-
-    private void changeDirection(String command) {
-        if (N.equals(direction)) {
-            if ("R".equalsIgnoreCase(command))
-                direction = E;
-            else
-                direction = W;
-        } else if (E.equals(direction)) {
-            if ("R".equalsIgnoreCase(command))
-                direction = S;
-            else
-                direction = N;
-        } else if (S.equals(direction)) {
-            if ("R".equalsIgnoreCase(command))
-                direction = W;
-            else
-                direction = E;
-        } else if (W.equals(direction)) {
-            if ("R".equalsIgnoreCase(command))
-                direction = N;
-            else
-                direction = S;
+            direction = direction.changeDirection(command);
         }
     }
 
