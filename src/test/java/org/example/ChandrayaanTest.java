@@ -149,4 +149,15 @@ class ChandrayaanTest {
 
         Assertions.assertEquals("E", chandrayaan.getDirection());
     }
+    
+    @Test
+    void shouldChangeDirectionFromNorthToWestOnLeftCommand() {
+
+        Chandrayaan chandrayaan = new Chandrayaan(0, 0, 0, "N");
+        List<String> commands = List.of("l");
+
+        chandrayaan.executeCommand(commands);
+
+        Assertions.assertEquals("W", chandrayaan.getDirection());
+    }
 }

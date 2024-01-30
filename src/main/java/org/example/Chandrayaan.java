@@ -16,6 +16,7 @@ public class Chandrayaan {
     }
 
     public void executeCommand(List<String> commands) {
+        String command = commands.get(0);
         if (commands.get(0).equalsIgnoreCase("F")) {
             if ("N".equalsIgnoreCase(direction))
                 yPos++;
@@ -30,7 +31,10 @@ public class Chandrayaan {
             else if ("D".equalsIgnoreCase(direction))
                 zPos--;
         } else {
-            direction = "E";
+            if ("R".equalsIgnoreCase(command))
+                direction = "E";
+            else
+                direction = "W";
         }
     }
 
