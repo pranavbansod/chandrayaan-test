@@ -3,7 +3,7 @@ package org.example;
 import java.util.List;
 
 public class Chandrayaan {
-    private final int xPos;
+    private int xPos;
     private int yPos;
     private final int zPos;
     private final String direction;
@@ -16,7 +16,14 @@ public class Chandrayaan {
     }
 
     public void executeCommand(List<String> commands) {
-        yPos++;
+        if ("N".equalsIgnoreCase(direction))
+            yPos++;
+        else
+            xPos++;
+    }
+
+    public int getXPosition() {
+        return xPos;
     }
 
     public int getYPosition() {
