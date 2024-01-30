@@ -16,7 +16,10 @@ public class Chandrayaan {
     }
 
     public void executeCommands(List<String> commands) {
-        String command = commands.get(0);
+        commands.forEach(this::executeCommand);
+    }
+
+    private void executeCommand(String command) {
         if (isMoveCommand(command)) {
             move(command);
         } else {

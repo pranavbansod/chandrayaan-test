@@ -142,6 +142,17 @@ class ChandrayaanTest {
             Assertions.assertEquals(-2, chandrayaan.getZPosition());
         }
 
+        @Test
+        void shouldYPosFromNeg1To2orFCommandThriceFacingNorth() {
+
+            Chandrayaan chandrayaan = new Chandrayaan(0, -1, 0, "N");
+            List<String> commands = List.of("f","f","f");
+
+            chandrayaan.executeCommands(commands);
+
+            Assertions.assertEquals(2, chandrayaan.getYPosition());
+        }
+
     }
 
     @Nested
@@ -278,6 +289,17 @@ class ChandrayaanTest {
             Assertions.assertEquals(0, chandrayaan.getZPosition());
         }
 
+        @Test
+        void shouldYPosFromNeg1ToNeg4orBCommandThriceFacingNorth() {
+
+            Chandrayaan chandrayaan = new Chandrayaan(0, -1, 0, "N");
+            List<String> commands = List.of("b","b","b");
+
+            chandrayaan.executeCommands(commands);
+
+            Assertions.assertEquals(-4, chandrayaan.getYPosition());
+        }
+
     }
 
     @Nested
@@ -368,6 +390,39 @@ class ChandrayaanTest {
             chandrayaan.executeCommands(commands);
 
             Assertions.assertEquals("S", chandrayaan.getDirection());
+        }
+
+        @Test
+        void shouldChangeDirectionFromNorthToEastOnFiveRightCommand() {
+
+            Chandrayaan chandrayaan = new Chandrayaan(0, 0, 0, "N");
+            List<String> commands = List.of("r", "r", "r", "r", "r");
+
+            chandrayaan.executeCommands(commands);
+
+            Assertions.assertEquals("E", chandrayaan.getDirection());
+        }
+
+        @Test
+        void shouldChangeDirectionFromNorthToSouthOnTwoRightCommand() {
+
+            Chandrayaan chandrayaan = new Chandrayaan(0, 0, 0, "N");
+            List<String> commands = List.of("r", "r");
+
+            chandrayaan.executeCommands(commands);
+
+            Assertions.assertEquals("S", chandrayaan.getDirection());
+        }
+
+        @Test
+        void shouldNotChangDirectionFromNorthOnTwoRightAndTowLeftCommand() {
+
+            Chandrayaan chandrayaan = new Chandrayaan(0, 0, 0, "N");
+            List<String> commands = List.of("l", "r", "r", "l");
+
+            chandrayaan.executeCommands(commands);
+
+            Assertions.assertEquals("N", chandrayaan.getDirection());
         }
     }
 }
