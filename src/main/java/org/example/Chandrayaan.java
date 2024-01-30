@@ -2,11 +2,18 @@ package org.example;
 
 import java.util.List;
 
+import static org.example.Direction.N;
+import static org.example.Direction.E;
+import static org.example.Direction.W;
+import static org.example.Direction.S;
+import static org.example.Direction.U;
+import static org.example.Direction.D;
+
 public class Chandrayaan {
-    private String direction;
+    private Direction direction;
     private final CoOrdinates coOrdinates;
 
-    public Chandrayaan(CoOrdinates coOrdinates, String direction) {
+    public Chandrayaan(CoOrdinates coOrdinates, Direction direction) {
         this.direction = direction;
         this.coOrdinates = coOrdinates;
     }
@@ -14,7 +21,7 @@ public class Chandrayaan {
         return coOrdinates;
     }
 
-    public String getDirection() {
+    public Direction getDirection() {
         return direction;
     }
 
@@ -31,26 +38,26 @@ public class Chandrayaan {
     }
 
     private void changeDirection(String command) {
-        if ("N".equalsIgnoreCase(direction)) {
+        if (N.equals(direction)) {
             if ("R".equalsIgnoreCase(command))
-                direction = "E";
+                direction = E;
             else
-                direction = "W";
-        } else if ("E".equalsIgnoreCase(direction)) {
+                direction = W;
+        } else if (E.equals(direction)) {
             if ("R".equalsIgnoreCase(command))
-                direction = "S";
+                direction = S;
             else
-                direction = "N";
-        } else if ("S".equalsIgnoreCase(direction)) {
+                direction = N;
+        } else if (S.equals(direction)) {
             if ("R".equalsIgnoreCase(command))
-                direction = "W";
+                direction = W;
             else
-                direction = "E";
-        } else if ("W".equalsIgnoreCase(direction)) {
+                direction = E;
+        } else if (W.equals(direction)) {
             if ("R".equalsIgnoreCase(command))
-                direction = "N";
+                direction = N;
             else
-                direction = "S";
+                direction = S;
         }
     }
 
@@ -63,32 +70,32 @@ public class Chandrayaan {
     }
 
     private void moveForward() {
-        if ("N".equalsIgnoreCase(direction))
+        if (N.equals(direction))
             coOrdinates.incrementY();
-        else if ("E".equalsIgnoreCase(direction))
+        else if (E.equals(direction))
             coOrdinates.incrementX();
-        else if ("W".equalsIgnoreCase(direction))
+        else if (W.equals(direction))
             coOrdinates.decrementX();
-        else if ("S".equalsIgnoreCase(direction))
+        else if (S.equals(direction))
             coOrdinates.decrementY();
-        else if ("U".equalsIgnoreCase(direction))
+        else if (U.equals(direction))
             coOrdinates.incrementZ();
-        else if ("D".equalsIgnoreCase(direction))
+        else if (D.equals(direction))
             coOrdinates.decrementZ();
     }
 
     private void moveBackward() {
-        if ("N".equalsIgnoreCase(direction))
+        if (N.equals(direction))
             coOrdinates.decrementY();
-        else if ("E".equalsIgnoreCase(direction))
+        else if (E.equals(direction))
             coOrdinates.decrementX();
-        else if ("W".equalsIgnoreCase(direction))
+        else if (W.equals(direction))
             coOrdinates.incrementX();
-        else if ("S".equalsIgnoreCase(direction))
+        else if (S.equals(direction))
             coOrdinates.incrementY();
-        else if ("U".equalsIgnoreCase(direction))
+        else if (U.equals(direction))
             coOrdinates.decrementZ();
-        else if ("D".equalsIgnoreCase(direction))
+        else if (D.equals(direction))
             coOrdinates.incrementZ();
     }
 
