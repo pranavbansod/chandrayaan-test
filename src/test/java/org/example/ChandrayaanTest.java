@@ -13,7 +13,8 @@ class ChandrayaanTest {
         @Test
         void shouldMoveYPosTo1ForFCommandFacingNorth() {
 
-            Chandrayaan chandrayaan = new Chandrayaan(0, 0, 0, "N");
+            CoOrdinates coOrdinates = new CoOrdinates(0, 0, 0);
+            Chandrayaan chandrayaan = new Chandrayaan(0, 0, 0, "N", coOrdinates);
             List<String> commands = List.of("f");
 
             chandrayaan.executeCommands(commands);
@@ -24,7 +25,8 @@ class ChandrayaanTest {
         @Test
         void shouldMoveYPosFrom1To2ForFCommandFacingNorth() {
 
-            Chandrayaan chandrayaan = new Chandrayaan(0, 1, 0, "N");
+            CoOrdinates coOrdinates = new CoOrdinates(0, 1, 0);
+            Chandrayaan chandrayaan = new Chandrayaan(0, 1, 0, "N", coOrdinates);
             List<String> commands = List.of("f");
 
             chandrayaan.executeCommands(commands);
@@ -35,7 +37,8 @@ class ChandrayaanTest {
         @Test
         void shouldMoveXPosTo1ForFCommandFacingEast() {
 
-            Chandrayaan chandrayaan = new Chandrayaan(0, 0, 0, "E");
+            CoOrdinates coOrdinates = new CoOrdinates(0, 0, 0);
+            Chandrayaan chandrayaan = new Chandrayaan(0, 0, 0, "E", coOrdinates);
             List<String> commands = List.of("f");
 
             chandrayaan.executeCommands(commands);
@@ -46,7 +49,8 @@ class ChandrayaanTest {
         @Test
         void shouldMoveXPosFrom1To2ForFCommandFacingEast() {
 
-            Chandrayaan chandrayaan = new Chandrayaan(1, 0, 0, "E");
+            CoOrdinates coOrdinates = new CoOrdinates(1, 0, 0);
+            Chandrayaan chandrayaan = new Chandrayaan(1, 0, 0, "E", coOrdinates);
             List<String> commands = List.of("f");
 
             chandrayaan.executeCommands(commands);
@@ -57,7 +61,8 @@ class ChandrayaanTest {
         @Test
         void shouldMoveXPos0ToNeg1ForFCommandFacingWest() {
 
-            Chandrayaan chandrayaan = new Chandrayaan(0, 0, 0, "W");
+            CoOrdinates coOrdinates = new CoOrdinates(0, 0, 0);
+            Chandrayaan chandrayaan = new Chandrayaan(0, 0, 0, "W", coOrdinates);
             List<String> commands = List.of("f");
 
             chandrayaan.executeCommands(commands);
@@ -68,7 +73,8 @@ class ChandrayaanTest {
         @Test
         void shouldMoveXPosFromNeg1ToNeg2ForFCommandFacingWest() {
 
-            Chandrayaan chandrayaan = new Chandrayaan(-1, 0, 0, "W");
+            CoOrdinates coOrdinates = new CoOrdinates(-1, 0, 0);
+            Chandrayaan chandrayaan = new Chandrayaan(-1, 0, 0, "W", coOrdinates);
             List<String> commands = List.of("f");
 
             chandrayaan.executeCommands(commands);
@@ -79,7 +85,8 @@ class ChandrayaanTest {
         @Test
         void shouldMoveYPosFrom0ToNeg1ForFCommandFacingSouth() {
 
-            Chandrayaan chandrayaan = new Chandrayaan(0, 0, 0, "S");
+            CoOrdinates coOrdinates = new CoOrdinates(0, 0, 0);
+            Chandrayaan chandrayaan = new Chandrayaan(0, 0, 0, "S", coOrdinates);
             List<String> commands = List.of("f");
 
             chandrayaan.executeCommands(commands);
@@ -90,7 +97,8 @@ class ChandrayaanTest {
         @Test
         void shouldMoveYPosFromNeg1ToNeg2ForFCommandFacingSouth() {
 
-            Chandrayaan chandrayaan = new Chandrayaan(0, -1, 0, "S");
+            CoOrdinates coOrdinates = new CoOrdinates(0, -1, 0);
+            Chandrayaan chandrayaan = new Chandrayaan(0, -1, 0, "S", coOrdinates);
             List<String> commands = List.of("f");
 
             chandrayaan.executeCommands(commands);
@@ -101,7 +109,8 @@ class ChandrayaanTest {
         @Test
         void shouldMoveZPosFrom0To1ForFCommandFacingUp() {
 
-            Chandrayaan chandrayaan = new Chandrayaan(0, 0, 0, "U");
+            CoOrdinates coOrdinates = new CoOrdinates(0, 0, 0);
+            Chandrayaan chandrayaan = new Chandrayaan(0, 0, 0, "U", coOrdinates);
             List<String> commands = List.of("f");
 
             chandrayaan.executeCommands(commands);
@@ -112,7 +121,8 @@ class ChandrayaanTest {
         @Test
         void shouldMoveZPosFrom1To2ForFCommandFacingUp() {
 
-            Chandrayaan chandrayaan = new Chandrayaan(0, 0, 1, "U");
+            CoOrdinates coOrdinates = new CoOrdinates(0, 0, 1);
+            Chandrayaan chandrayaan = new Chandrayaan(0, 0, 1, "U", coOrdinates);
             List<String> commands = List.of("f");
 
             chandrayaan.executeCommands(commands);
@@ -123,7 +133,8 @@ class ChandrayaanTest {
         @Test
         void shouldMoveZPosFrom0ToNeg1ForFCommandFacingDown() {
 
-            Chandrayaan chandrayaan = new Chandrayaan(0, 0, 0, "D");
+            CoOrdinates coOrdinates = new CoOrdinates(0, 0, 0);
+            Chandrayaan chandrayaan = new Chandrayaan(0, 0, 0, "D", coOrdinates);
             List<String> commands = List.of("f");
 
             chandrayaan.executeCommands(commands);
@@ -134,7 +145,8 @@ class ChandrayaanTest {
         @Test
         void shouldMoveZPosFromNeg1ToNeg2ForFCommandFacingDown() {
 
-            Chandrayaan chandrayaan = new Chandrayaan(0, 0, -1, "D");
+            CoOrdinates coOrdinates = new CoOrdinates(0, 0, -1);
+            Chandrayaan chandrayaan = new Chandrayaan(0, 0, -1, "D", coOrdinates);
             List<String> commands = List.of("f");
 
             chandrayaan.executeCommands(commands);
@@ -145,7 +157,8 @@ class ChandrayaanTest {
         @Test
         void shouldYPosFromNeg1To2orFCommandThriceFacingNorth() {
 
-            Chandrayaan chandrayaan = new Chandrayaan(0, -1, 0, "N");
+            CoOrdinates coOrdinates = new CoOrdinates(0, -1, 0);
+            Chandrayaan chandrayaan = new Chandrayaan(0, -1, 0, "N", coOrdinates);
             List<String> commands = List.of("f","f","f");
 
             chandrayaan.executeCommands(commands);
@@ -160,7 +173,8 @@ class ChandrayaanTest {
         @Test
         void shouldMoveYPosToNeg1ForBCommandFacingNorth() {
 
-            Chandrayaan chandrayaan = new Chandrayaan(0, 0, 0, "N");
+            CoOrdinates coOrdinates = new CoOrdinates(0, 0, 0);
+            Chandrayaan chandrayaan = new Chandrayaan(0, 0, 0, "N", coOrdinates);
             List<String> commands = List.of("b");
 
             chandrayaan.executeCommands(commands);
@@ -171,7 +185,8 @@ class ChandrayaanTest {
         @Test
         void shouldMoveYPosFrom1To0ForBCommandFacingNorth() {
 
-            Chandrayaan chandrayaan = new Chandrayaan(0, 1, 0, "N");
+            CoOrdinates coOrdinates = new CoOrdinates(0, 1, 0);
+            Chandrayaan chandrayaan = new Chandrayaan(0, 1, 0, "N", coOrdinates);
             List<String> commands = List.of("b");
 
             chandrayaan.executeCommands(commands);
@@ -182,7 +197,8 @@ class ChandrayaanTest {
         @Test
         void shouldMoveXPosToNeg1ForBCommandFacingEast() {
 
-            Chandrayaan chandrayaan = new Chandrayaan(0, 0, 0, "E");
+            CoOrdinates coOrdinates = new CoOrdinates(0, 0, 0);
+            Chandrayaan chandrayaan = new Chandrayaan(0, 0, 0, "E", coOrdinates);
             List<String> commands = List.of("b");
 
             chandrayaan.executeCommands(commands);
@@ -193,7 +209,8 @@ class ChandrayaanTest {
         @Test
         void shouldMoveXPosFrom1To0ForBCommandFacingEast() {
 
-            Chandrayaan chandrayaan = new Chandrayaan(1, 0, 0, "E");
+            CoOrdinates coOrdinates = new CoOrdinates(1, 0, 0);
+            Chandrayaan chandrayaan = new Chandrayaan(1, 0, 0, "E", coOrdinates);
             List<String> commands = List.of("b");
 
             chandrayaan.executeCommands(commands);
@@ -204,7 +221,8 @@ class ChandrayaanTest {
         @Test
         void shouldMoveXPos0To1ForBCommandFacingWest() {
 
-            Chandrayaan chandrayaan = new Chandrayaan(0, 0, 0, "W");
+            CoOrdinates coOrdinates = new CoOrdinates(0, 0, 0);
+            Chandrayaan chandrayaan = new Chandrayaan(0, 0, 0, "W", coOrdinates);
             List<String> commands = List.of("b");
 
             chandrayaan.executeCommands(commands);
@@ -215,7 +233,8 @@ class ChandrayaanTest {
         @Test
         void shouldMoveXPosFromNeg1To0ForBCommandFacingWest() {
 
-            Chandrayaan chandrayaan = new Chandrayaan(-1, 0, 0, "W");
+            CoOrdinates coOrdinates = new CoOrdinates(-1, 0, 0);
+            Chandrayaan chandrayaan = new Chandrayaan(-1, 0, 0, "W", coOrdinates);
             List<String> commands = List.of("b");
 
             chandrayaan.executeCommands(commands);
@@ -226,7 +245,8 @@ class ChandrayaanTest {
         @Test
         void shouldMoveYPosFrom0To1ForBCommandFacingSouth() {
 
-            Chandrayaan chandrayaan = new Chandrayaan(0, 0, 0, "S");
+            CoOrdinates coOrdinates = new CoOrdinates(0, 0, 0);
+            Chandrayaan chandrayaan = new Chandrayaan(0, 0, 0, "S", coOrdinates);
             List<String> commands = List.of("b");
 
             chandrayaan.executeCommands(commands);
@@ -237,7 +257,8 @@ class ChandrayaanTest {
         @Test
         void shouldMoveYPosFromNeg1To0ForBCommandFacingSouth() {
 
-            Chandrayaan chandrayaan = new Chandrayaan(0, -1, 0, "S");
+            CoOrdinates coOrdinates = new CoOrdinates(0, -1, 0);
+            Chandrayaan chandrayaan = new Chandrayaan(0, -1, 0, "S", coOrdinates);
             List<String> commands = List.of("b");
 
             chandrayaan.executeCommands(commands);
@@ -248,7 +269,8 @@ class ChandrayaanTest {
         @Test
         void shouldMoveZPosFrom0ToNeg1ForFCommandFacingUp() {
 
-            Chandrayaan chandrayaan = new Chandrayaan(0, 0, 0, "U");
+            CoOrdinates coOrdinates = new CoOrdinates(0, 0, 0);
+            Chandrayaan chandrayaan = new Chandrayaan(0, 0, 0, "U", coOrdinates);
             List<String> commands = List.of("b");
 
             chandrayaan.executeCommands(commands);
@@ -259,7 +281,8 @@ class ChandrayaanTest {
         @Test
         void shouldMoveZPosFrom1To0ForFCommandFacingUp() {
 
-            Chandrayaan chandrayaan = new Chandrayaan(0, 0, 1, "U");
+            CoOrdinates coOrdinates = new CoOrdinates(0, 0, 1);
+            Chandrayaan chandrayaan = new Chandrayaan(0, 0, 1, "U", coOrdinates);
             List<String> commands = List.of("b");
 
             chandrayaan.executeCommands(commands);
@@ -270,7 +293,8 @@ class ChandrayaanTest {
         @Test
         void shouldMoveZPosFrom0To1ForBCommandFacingDown() {
 
-            Chandrayaan chandrayaan = new Chandrayaan(0, 0, 0, "D");
+            CoOrdinates coOrdinates = new CoOrdinates(0, 0, 0);
+            Chandrayaan chandrayaan = new Chandrayaan(0, 0, 0, "D", coOrdinates);
             List<String> commands = List.of("b");
 
             chandrayaan.executeCommands(commands);
@@ -281,7 +305,8 @@ class ChandrayaanTest {
         @Test
         void shouldMoveZPosFromNeg1To0ForBCommandFacingDown() {
 
-            Chandrayaan chandrayaan = new Chandrayaan(0, 0, -1, "D");
+            CoOrdinates coOrdinates = new CoOrdinates(0, 0, -1);
+            Chandrayaan chandrayaan = new Chandrayaan(0, 0, -1, "D", coOrdinates);
             List<String> commands = List.of("b");
 
             chandrayaan.executeCommands(commands);
@@ -292,7 +317,8 @@ class ChandrayaanTest {
         @Test
         void shouldYPosFromNeg1ToNeg4orBCommandThriceFacingNorth() {
 
-            Chandrayaan chandrayaan = new Chandrayaan(0, -1, 0, "N");
+            CoOrdinates coOrdinates = new CoOrdinates(0, -1, 0);
+            Chandrayaan chandrayaan = new Chandrayaan(0, -1, 0, "N", coOrdinates);
             List<String> commands = List.of("b","b","b");
 
             chandrayaan.executeCommands(commands);
@@ -307,7 +333,8 @@ class ChandrayaanTest {
         @Test
         void shouldChangeDirectionFromNorthToEastOnRightCommand() {
 
-            Chandrayaan chandrayaan = new Chandrayaan(0, 0, 0, "N");
+            CoOrdinates coOrdinates = new CoOrdinates(0, 0, 0);
+            Chandrayaan chandrayaan = new Chandrayaan(0, 0, 0, "N", coOrdinates);
             List<String> commands = List.of("r");
 
             chandrayaan.executeCommands(commands);
@@ -318,7 +345,8 @@ class ChandrayaanTest {
         @Test
         void shouldChangeDirectionFromNorthToWestOnLeftCommand() {
 
-            Chandrayaan chandrayaan = new Chandrayaan(0, 0, 0, "N");
+            CoOrdinates coOrdinates = new CoOrdinates(0, 0, 0);
+            Chandrayaan chandrayaan = new Chandrayaan(0, 0, 0, "N", coOrdinates);
             List<String> commands = List.of("l");
 
             chandrayaan.executeCommands(commands);
@@ -329,7 +357,8 @@ class ChandrayaanTest {
         @Test
         void shouldChangeDirectionFromEastToSouthOnRightCommand() {
 
-            Chandrayaan chandrayaan = new Chandrayaan(0, 0, 0, "E");
+            CoOrdinates coOrdinates = new CoOrdinates(0, 0, 0);
+            Chandrayaan chandrayaan = new Chandrayaan(0, 0, 0, "E", coOrdinates);
             List<String> commands = List.of("r");
 
             chandrayaan.executeCommands(commands);
@@ -340,7 +369,8 @@ class ChandrayaanTest {
         @Test
         void shouldChangeDirectionFromEastToNorthOnLeftCommand() {
 
-            Chandrayaan chandrayaan = new Chandrayaan(0, 0, 0, "E");
+            CoOrdinates coOrdinates = new CoOrdinates(0, 0, 0);
+            Chandrayaan chandrayaan = new Chandrayaan(0, 0, 0, "E", coOrdinates);
             List<String> commands = List.of("l");
 
             chandrayaan.executeCommands(commands);
@@ -351,7 +381,8 @@ class ChandrayaanTest {
         @Test
         void shouldChangeDirectionFromSouthToWestOnRightCommand() {
 
-            Chandrayaan chandrayaan = new Chandrayaan(0, 0, 0, "S");
+            CoOrdinates coOrdinates = new CoOrdinates(0, 0, 0);
+            Chandrayaan chandrayaan = new Chandrayaan(0, 0, 0, "S", coOrdinates);
             List<String> commands = List.of("r");
 
             chandrayaan.executeCommands(commands);
@@ -362,7 +393,8 @@ class ChandrayaanTest {
         @Test
         void shouldChangeDirectionFromSouthToEastOnLeftCommand() {
 
-            Chandrayaan chandrayaan = new Chandrayaan(0, 0, 0, "S");
+            CoOrdinates coOrdinates = new CoOrdinates(0, 0, 0);
+            Chandrayaan chandrayaan = new Chandrayaan(0, 0, 0, "S", coOrdinates);
             List<String> commands = List.of("l");
 
             chandrayaan.executeCommands(commands);
@@ -373,7 +405,8 @@ class ChandrayaanTest {
         @Test
         void shouldChangeDirectionFromWestToNorthOnRightCommand() {
 
-            Chandrayaan chandrayaan = new Chandrayaan(0, 0, 0, "W");
+            CoOrdinates coOrdinates = new CoOrdinates(0, 0, 0);
+            Chandrayaan chandrayaan = new Chandrayaan(0, 0, 0, "W", coOrdinates);
             List<String> commands = List.of("r");
 
             chandrayaan.executeCommands(commands);
@@ -384,7 +417,8 @@ class ChandrayaanTest {
         @Test
         void shouldChangeDirectionFromWestToSouthOnLeftCommand() {
 
-            Chandrayaan chandrayaan = new Chandrayaan(0, 0, 0, "W");
+            CoOrdinates coOrdinates = new CoOrdinates(0, 0, 0);
+            Chandrayaan chandrayaan = new Chandrayaan(0, 0, 0, "W", coOrdinates);
             List<String> commands = List.of("l");
 
             chandrayaan.executeCommands(commands);
@@ -395,7 +429,8 @@ class ChandrayaanTest {
         @Test
         void shouldChangeDirectionFromNorthToEastOnFiveRightCommand() {
 
-            Chandrayaan chandrayaan = new Chandrayaan(0, 0, 0, "N");
+            CoOrdinates coOrdinates = new CoOrdinates(0, 0, 0);
+            Chandrayaan chandrayaan = new Chandrayaan(0, 0, 0, "N", coOrdinates);
             List<String> commands = List.of("r", "r", "r", "r", "r");
 
             chandrayaan.executeCommands(commands);
@@ -406,7 +441,8 @@ class ChandrayaanTest {
         @Test
         void shouldChangeDirectionFromNorthToSouthOnTwoRightCommand() {
 
-            Chandrayaan chandrayaan = new Chandrayaan(0, 0, 0, "N");
+            CoOrdinates coOrdinates = new CoOrdinates(0, 0, 0);
+            Chandrayaan chandrayaan = new Chandrayaan(0, 0, 0, "N", coOrdinates);
             List<String> commands = List.of("r", "r");
 
             chandrayaan.executeCommands(commands);
@@ -417,7 +453,7 @@ class ChandrayaanTest {
         @Test
         void shouldNotChangDirectionFromNorthOnTwoRightAndTowLeftCommand() {
 
-            Chandrayaan chandrayaan = new Chandrayaan(0, 0, 0, "N");
+            Chandrayaan chandrayaan = new Chandrayaan(0, 0, 0, "N", new CoOrdinates(0, 0, 0));
             List<String> commands = List.of("l", "r", "r", "l");
 
             chandrayaan.executeCommands(commands);

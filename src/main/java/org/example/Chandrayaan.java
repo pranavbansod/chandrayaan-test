@@ -7,12 +7,14 @@ public class Chandrayaan {
     private int yPos;
     private int zPos;
     private String direction;
+    private final CoOrdinates coOrdinates;
 
-    public Chandrayaan(int xPos, int yPos, int zPos, String direction) {
+    public Chandrayaan(int xPos, int yPos, int zPos, String direction, CoOrdinates coOrdinates) {
         this.xPos = xPos;
         this.yPos = yPos;
         this.zPos = zPos;
         this.direction = direction;
+        this.coOrdinates = coOrdinates;
     }
 
     public void executeCommands(List<String> commands) {
@@ -61,56 +63,32 @@ public class Chandrayaan {
 
     private void moveForward() {
         if ("N".equalsIgnoreCase(direction))
-            incrementY();
+            coOrdinates.incrementY();
         else if ("E".equalsIgnoreCase(direction))
-            incrementX();
+            coOrdinates.incrementX();
         else if ("W".equalsIgnoreCase(direction))
-            decrementX();
+            coOrdinates.decrementX();
         else if ("S".equalsIgnoreCase(direction))
-            decrementY();
+            coOrdinates.decrementY();
         else if ("U".equalsIgnoreCase(direction))
-            incrementZ();
+            coOrdinates.incrementZ();
         else if ("D".equalsIgnoreCase(direction))
-            decrementZ();
+            coOrdinates.decrementZ();
     }
 
     private void moveBackward() {
         if ("N".equalsIgnoreCase(direction))
-            decrementY();
+            coOrdinates.decrementY();
         else if ("E".equalsIgnoreCase(direction))
-            decrementX();
+            coOrdinates.decrementX();
         else if ("W".equalsIgnoreCase(direction))
-            incrementX();
+            coOrdinates.incrementX();
         else if ("S".equalsIgnoreCase(direction))
-            incrementY();
+            coOrdinates.incrementY();
         else if ("U".equalsIgnoreCase(direction))
-            decrementZ();
+            coOrdinates.decrementZ();
         else if ("D".equalsIgnoreCase(direction))
-            incrementZ();
-    }
-
-    private void incrementX() {
-        xPos++;
-    }
-
-    private void decrementX() {
-        xPos--;
-    }
-
-    private void incrementY() {
-        yPos++;
-    }
-
-    private void decrementY() {
-        yPos--;
-    }
-
-    private void incrementZ() {
-        zPos++;
-    }
-
-    private void decrementZ() {
-        zPos--;
+            coOrdinates.incrementZ();
     }
 
     private boolean isMoveCommand(String command) {
@@ -126,15 +104,15 @@ public class Chandrayaan {
     }
 
     public int getXPosition() {
-        return xPos;
+        return coOrdinates.getX();
     }
 
     public int getYPosition() {
-        return yPos;
+        return coOrdinates.getY();
     }
 
     public int getZPosition() {
-        return zPos;
+        return coOrdinates.getZ();
     }
 
     public String getDirection() {
