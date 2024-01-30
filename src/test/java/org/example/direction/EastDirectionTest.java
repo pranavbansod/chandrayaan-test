@@ -1,5 +1,6 @@
 package org.example.direction;
 
+import org.example.CoOrdinates;
 import org.example.Direction;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
@@ -33,6 +34,17 @@ class EastDirectionTest {
         DirectionAbstract leftDirection = eastDirection.getLeftDirection();
 
         Assertions.assertEquals(NorthDirection.class, leftDirection.getClass());
+    }
+
+    @Test
+    void shouldMoveForwardInXDirection() {
+        CoOrdinates coOrdinates = new CoOrdinates(0, 0, 0);
+
+        eastDirection.moveForward(coOrdinates);
+
+        CoOrdinates expectedCoOrdinates = new CoOrdinates(1, 0, 0);
+        Assertions.assertEquals(expectedCoOrdinates, coOrdinates);
+
     }
 
 }

@@ -1,5 +1,6 @@
 package org.example.direction;
 
+import org.example.CoOrdinates;
 import org.example.Direction;
 
 import static org.example.Direction.W;
@@ -27,8 +28,8 @@ public class WestDirection extends DirectionAbstract {
     }
 
     @Override
-    public void moveForward() {
-
+    public void moveForward(CoOrdinates coOrdinates) {
+        coOrdinates.decrementX();
     }
 
     @Override

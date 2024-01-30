@@ -28,8 +28,8 @@ public class DownDirection extends DirectionAbstract {
     }
 
     @Override
-    public void moveForward() {
-
+    public void moveForward(CoOrdinates coOrdinates) {
+        coOrdinates.decrementZ();
     }
 
     @Override
