@@ -168,7 +168,27 @@ class ChandrayaanTest {
             Assertions.assertEquals(0, chandrayaan.getYPosition());
         }
 
+        @Test
+        void shouldMoveXPosToNeg1ForBCommandFacingEast() {
 
+            Chandrayaan chandrayaan = new Chandrayaan(0, 0, 0, "E");
+            List<String> commands = List.of("b");
+
+            chandrayaan.executeCommands(commands);
+
+            Assertions.assertEquals(-1, chandrayaan.getXPosition());
+        }
+
+        @Test
+        void shouldMoveXPosFrom1To0ForBCommandFacingEast() {
+
+            Chandrayaan chandrayaan = new Chandrayaan(1, 0, 0, "E");
+            List<String> commands = List.of("b");
+
+            chandrayaan.executeCommands(commands);
+
+            Assertions.assertEquals(0, chandrayaan.getXPosition());
+        }
     }
 
     @Nested

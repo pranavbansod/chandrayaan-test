@@ -74,6 +74,8 @@ public class Chandrayaan {
     private void moveBackward() {
         if ("N".equalsIgnoreCase(direction))
             yPos--;
+        else if ("E".equalsIgnoreCase(direction))
+            xPos--;
     }
 
     private boolean isMoveCommand(String command) {
