@@ -10,6 +10,13 @@ public class Chandrayaan {
         this.direction = direction;
         this.coOrdinates = coOrdinates;
     }
+    public CoOrdinates getCoOrdinates() {
+        return coOrdinates;
+    }
+
+    public String getDirection() {
+        return direction;
+    }
 
     public void executeCommands(List<String> commands) {
         commands.forEach(this::executeCommand);
@@ -97,19 +104,4 @@ public class Chandrayaan {
         return "F".equalsIgnoreCase(command);
     }
 
-    public int getXPosition() {
-        return coOrdinates.getX();
-    }
-
-    public int getYPosition() {
-        return coOrdinates.getY();
-    }
-
-    public int getZPosition() {
-        return coOrdinates.getZ();
-    }
-
-    public String getDirection() {
-        return direction;
-    }
 }

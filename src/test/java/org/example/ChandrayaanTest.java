@@ -19,7 +19,8 @@ class ChandrayaanTest {
 
             chandrayaan.executeCommands(commands);
 
-            Assertions.assertEquals(1, chandrayaan.getYPosition());
+            CoOrdinates expectedCoOrdinates = new CoOrdinates(0, 1, 0);
+            Assertions.assertEquals(expectedCoOrdinates, chandrayaan.getCoOrdinates());
         }
 
         @Test
@@ -31,7 +32,8 @@ class ChandrayaanTest {
 
             chandrayaan.executeCommands(commands);
 
-            Assertions.assertEquals(2, chandrayaan.getYPosition());
+            CoOrdinates expectedCoOrdinates = new CoOrdinates(0, 2, 0);
+            Assertions.assertEquals(expectedCoOrdinates, chandrayaan.getCoOrdinates());
         }
 
         @Test
@@ -43,7 +45,8 @@ class ChandrayaanTest {
 
             chandrayaan.executeCommands(commands);
 
-            Assertions.assertEquals(1, chandrayaan.getXPosition());
+            CoOrdinates expectedCoOrdinates = new CoOrdinates(1, 0, 0);
+            Assertions.assertEquals(expectedCoOrdinates, chandrayaan.getCoOrdinates());
         }
 
         @Test
@@ -55,7 +58,8 @@ class ChandrayaanTest {
 
             chandrayaan.executeCommands(commands);
 
-            Assertions.assertEquals(2, chandrayaan.getXPosition());
+            CoOrdinates expectedCoOrdinates = new CoOrdinates(2, 0, 0);
+            Assertions.assertEquals(expectedCoOrdinates, chandrayaan.getCoOrdinates());
         }
 
         @Test
@@ -67,7 +71,8 @@ class ChandrayaanTest {
 
             chandrayaan.executeCommands(commands);
 
-            Assertions.assertEquals(-1, chandrayaan.getXPosition());
+            CoOrdinates expectedCoOrdinates = new CoOrdinates(-1, 0, 0);
+            Assertions.assertEquals(expectedCoOrdinates, chandrayaan.getCoOrdinates());
         }
 
         @Test
@@ -79,7 +84,8 @@ class ChandrayaanTest {
 
             chandrayaan.executeCommands(commands);
 
-            Assertions.assertEquals(-2, chandrayaan.getXPosition());
+            CoOrdinates expectedCoOrdinates = new CoOrdinates(-2, 0, 0);
+            Assertions.assertEquals(expectedCoOrdinates, chandrayaan.getCoOrdinates());
         }
 
         @Test
@@ -91,7 +97,8 @@ class ChandrayaanTest {
 
             chandrayaan.executeCommands(commands);
 
-            Assertions.assertEquals(-1, chandrayaan.getYPosition());
+            CoOrdinates expectedCoOrdinates = new CoOrdinates(0, -1, 0);
+            Assertions.assertEquals(expectedCoOrdinates, chandrayaan.getCoOrdinates());
         }
 
         @Test
@@ -103,7 +110,8 @@ class ChandrayaanTest {
 
             chandrayaan.executeCommands(commands);
 
-            Assertions.assertEquals(-2, chandrayaan.getYPosition());
+            CoOrdinates expectedCoOrdinates = new CoOrdinates(0, -2, 0);
+            Assertions.assertEquals(expectedCoOrdinates, chandrayaan.getCoOrdinates());
         }
 
         @Test
@@ -115,7 +123,8 @@ class ChandrayaanTest {
 
             chandrayaan.executeCommands(commands);
 
-            Assertions.assertEquals(1, chandrayaan.getZPosition());
+            CoOrdinates expectedCoOrdinates = new CoOrdinates(0, 0, 1);
+            Assertions.assertEquals(expectedCoOrdinates, chandrayaan.getCoOrdinates());
         }
 
         @Test
@@ -127,7 +136,8 @@ class ChandrayaanTest {
 
             chandrayaan.executeCommands(commands);
 
-            Assertions.assertEquals(2, chandrayaan.getZPosition());
+            CoOrdinates expectedCoOrdinates = new CoOrdinates(0, 0, 2);
+            Assertions.assertEquals(expectedCoOrdinates, chandrayaan.getCoOrdinates());
         }
 
         @Test
@@ -139,7 +149,8 @@ class ChandrayaanTest {
 
             chandrayaan.executeCommands(commands);
 
-            Assertions.assertEquals(-1, chandrayaan.getZPosition());
+            CoOrdinates expectedCoOrdinates = new CoOrdinates(0, 0, -1);
+            Assertions.assertEquals(expectedCoOrdinates, chandrayaan.getCoOrdinates());
         }
 
         @Test
@@ -151,7 +162,8 @@ class ChandrayaanTest {
 
             chandrayaan.executeCommands(commands);
 
-            Assertions.assertEquals(-2, chandrayaan.getZPosition());
+            CoOrdinates expectedCoOrdinates = new CoOrdinates(0, 0, -2);
+            Assertions.assertEquals(expectedCoOrdinates, chandrayaan.getCoOrdinates());
         }
 
         @Test
@@ -163,7 +175,8 @@ class ChandrayaanTest {
 
             chandrayaan.executeCommands(commands);
 
-            Assertions.assertEquals(2, chandrayaan.getYPosition());
+            CoOrdinates expectedCoOrdinates = new CoOrdinates(0, 2, 0);
+            Assertions.assertEquals(expectedCoOrdinates, chandrayaan.getCoOrdinates());
         }
 
     }
@@ -179,7 +192,8 @@ class ChandrayaanTest {
 
             chandrayaan.executeCommands(commands);
 
-            Assertions.assertEquals(-1, chandrayaan.getYPosition());
+            CoOrdinates expectedCoOrdinates = new CoOrdinates(0, -1, 0);
+            Assertions.assertEquals(expectedCoOrdinates, chandrayaan.getCoOrdinates());
         }
 
         @Test
@@ -191,7 +205,8 @@ class ChandrayaanTest {
 
             chandrayaan.executeCommands(commands);
 
-            Assertions.assertEquals(0, chandrayaan.getYPosition());
+            CoOrdinates expectedCoOrdinates = new CoOrdinates(0, 0, 0);
+            Assertions.assertEquals(expectedCoOrdinates, chandrayaan.getCoOrdinates());
         }
 
         @Test
@@ -203,7 +218,8 @@ class ChandrayaanTest {
 
             chandrayaan.executeCommands(commands);
 
-            Assertions.assertEquals(-1, chandrayaan.getXPosition());
+            CoOrdinates expectedCoOrdinates = new CoOrdinates(-1, 0, 0);
+            Assertions.assertEquals(expectedCoOrdinates, chandrayaan.getCoOrdinates());
         }
 
         @Test
@@ -215,7 +231,8 @@ class ChandrayaanTest {
 
             chandrayaan.executeCommands(commands);
 
-            Assertions.assertEquals(0, chandrayaan.getXPosition());
+            CoOrdinates expectedCoOrdinates = new CoOrdinates(0, 0, 0);
+            Assertions.assertEquals(expectedCoOrdinates, chandrayaan.getCoOrdinates());
         }
 
         @Test
@@ -227,7 +244,8 @@ class ChandrayaanTest {
 
             chandrayaan.executeCommands(commands);
 
-            Assertions.assertEquals(1, chandrayaan.getXPosition());
+            CoOrdinates expectedCoOrdinates = new CoOrdinates(1, 0, 0);
+            Assertions.assertEquals(expectedCoOrdinates, chandrayaan.getCoOrdinates());
         }
 
         @Test
@@ -239,7 +257,8 @@ class ChandrayaanTest {
 
             chandrayaan.executeCommands(commands);
 
-            Assertions.assertEquals(0, chandrayaan.getXPosition());
+            CoOrdinates expectedCoOrdinates = new CoOrdinates(0, 0, 0);
+            Assertions.assertEquals(expectedCoOrdinates, chandrayaan.getCoOrdinates());
         }
 
         @Test
@@ -251,7 +270,8 @@ class ChandrayaanTest {
 
             chandrayaan.executeCommands(commands);
 
-            Assertions.assertEquals(1, chandrayaan.getYPosition());
+            CoOrdinates expectedCoOrdinates = new CoOrdinates(0, 1, 0);
+            Assertions.assertEquals(expectedCoOrdinates, chandrayaan.getCoOrdinates());
         }
 
         @Test
@@ -263,7 +283,8 @@ class ChandrayaanTest {
 
             chandrayaan.executeCommands(commands);
 
-            Assertions.assertEquals(0, chandrayaan.getYPosition());
+            CoOrdinates expectedCoOrdinates = new CoOrdinates(0, 0, 0);
+            Assertions.assertEquals(expectedCoOrdinates, chandrayaan.getCoOrdinates());
         }
 
         @Test
@@ -275,7 +296,8 @@ class ChandrayaanTest {
 
             chandrayaan.executeCommands(commands);
 
-            Assertions.assertEquals(-1, chandrayaan.getZPosition());
+            CoOrdinates expectedCoOrdinates = new CoOrdinates(0, 0, -1);
+            Assertions.assertEquals(expectedCoOrdinates, chandrayaan.getCoOrdinates());
         }
 
         @Test
@@ -287,7 +309,8 @@ class ChandrayaanTest {
 
             chandrayaan.executeCommands(commands);
 
-            Assertions.assertEquals(0, chandrayaan.getZPosition());
+            CoOrdinates expectedCoOrdinates = new CoOrdinates(0, 0, 0);
+            Assertions.assertEquals(expectedCoOrdinates, chandrayaan.getCoOrdinates());
         }
 
         @Test
@@ -299,7 +322,8 @@ class ChandrayaanTest {
 
             chandrayaan.executeCommands(commands);
 
-            Assertions.assertEquals(1, chandrayaan.getZPosition());
+            CoOrdinates expectedCoOrdinates = new CoOrdinates(0, 0, 1);
+            Assertions.assertEquals(expectedCoOrdinates, chandrayaan.getCoOrdinates());
         }
 
         @Test
@@ -311,7 +335,8 @@ class ChandrayaanTest {
 
             chandrayaan.executeCommands(commands);
 
-            Assertions.assertEquals(0, chandrayaan.getZPosition());
+            CoOrdinates expectedCoOrdinates = new CoOrdinates(0, 0, 0);
+            Assertions.assertEquals(expectedCoOrdinates, chandrayaan.getCoOrdinates());
         }
 
         @Test
@@ -323,7 +348,8 @@ class ChandrayaanTest {
 
             chandrayaan.executeCommands(commands);
 
-            Assertions.assertEquals(-4, chandrayaan.getYPosition());
+            CoOrdinates expectedCoOrdinates = new CoOrdinates(0, -4, 0);
+            Assertions.assertEquals(expectedCoOrdinates, chandrayaan.getCoOrdinates());
         }
 
     }
