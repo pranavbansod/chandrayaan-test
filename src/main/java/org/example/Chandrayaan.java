@@ -17,8 +17,8 @@ public class Chandrayaan {
 
     public void executeCommands(List<String> commands) {
         String command = commands.get(0);
-        if (isMoveForward(commands)) {
-            moveForward();
+        if (isMoveCommand(command)) {
+            move(command);
         } else {
             changeDirection(command);
         }
@@ -48,6 +48,14 @@ public class Chandrayaan {
         }
     }
 
+    private void move(String command) {
+        if (isForwardCommand(command)) {
+            moveForward();
+        } else {
+            moveBackward();
+        }
+    }
+
     private void moveForward() {
         if ("N".equalsIgnoreCase(direction))
             yPos++;
@@ -63,8 +71,21 @@ public class Chandrayaan {
             zPos--;
     }
 
-    private boolean isMoveForward(List<String> commands) {
-        return "F".equalsIgnoreCase(commands.get(0));
+    private void moveBackward() {
+        if ("N".equalsIgnoreCase(direction))
+            yPos--;
+    }
+
+    private boolean isMoveCommand(String command) {
+        return isForwardCommand(command) || isBackwardCommand(command);
+    }
+
+    private boolean isBackwardCommand(String command) {
+        return "B".equalsIgnoreCase(command);
+    }
+
+    private boolean isForwardCommand(String command) {
+        return "F".equalsIgnoreCase(command);
     }
 
     public int getXPosition() {

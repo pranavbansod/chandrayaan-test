@@ -145,6 +145,33 @@ class ChandrayaanTest {
     }
 
     @Nested
+    class MoveBackwardTest {
+        @Test
+        void shouldMoveYPosToNeg1ForBCommandFacingNorth() {
+
+            Chandrayaan chandrayaan = new Chandrayaan(0, 0, 0, "N");
+            List<String> commands = List.of("b");
+
+            chandrayaan.executeCommands(commands);
+
+            Assertions.assertEquals(-1, chandrayaan.getYPosition());
+        }
+
+        @Test
+        void shouldMoveYPosFrom1To0ForBCommandFacingNorth() {
+
+            Chandrayaan chandrayaan = new Chandrayaan(0, 1, 0, "N");
+            List<String> commands = List.of("b");
+
+            chandrayaan.executeCommands(commands);
+
+            Assertions.assertEquals(0, chandrayaan.getYPosition());
+        }
+
+
+    }
+
+    @Nested
     class ChangeDirectionTest {
         @Test
         void shouldChangeDirectionFromNorthToEastOnRightCommand() {
