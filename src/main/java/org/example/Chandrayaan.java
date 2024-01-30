@@ -6,7 +6,7 @@ public class Chandrayaan {
     private String direction;
     private final CoOrdinates coOrdinates;
 
-    public Chandrayaan(String direction, CoOrdinates coOrdinates) {
+    public Chandrayaan(CoOrdinates coOrdinates, String direction) {
         this.direction = direction;
         this.coOrdinates = coOrdinates;
     }
