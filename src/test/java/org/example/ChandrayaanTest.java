@@ -256,6 +256,27 @@ class ChandrayaanTest {
             Assertions.assertEquals(0, chandrayaan.getZPosition());
         }
 
+        @Test
+        void shouldMoveZPosFrom0To1ForBCommandFacingDown() {
+
+            Chandrayaan chandrayaan = new Chandrayaan(0, 0, 0, "D");
+            List<String> commands = List.of("b");
+
+            chandrayaan.executeCommands(commands);
+
+            Assertions.assertEquals(1, chandrayaan.getZPosition());
+        }
+
+        @Test
+        void shouldMoveZPosFromNeg1To0ForBCommandFacingDown() {
+
+            Chandrayaan chandrayaan = new Chandrayaan(0, 0, -1, "D");
+            List<String> commands = List.of("b");
+
+            chandrayaan.executeCommands(commands);
+
+            Assertions.assertEquals(0, chandrayaan.getZPosition());
+        }
 
     }
 
