@@ -17,25 +17,33 @@ public class Chandrayaan {
 
     public void executeCommands(List<String> commands) {
         String command = commands.get(0);
-        if (commands.get(0).equalsIgnoreCase("F")) {
-            if ("N".equalsIgnoreCase(direction))
-                yPos++;
-            else if ("E".equalsIgnoreCase(direction))
-                xPos++;
-            else if ("W".equalsIgnoreCase(direction))
-                xPos--;
-            else if ("S".equalsIgnoreCase(direction))
-                yPos--;
-            else if ("U".equalsIgnoreCase(direction))
-                zPos++;
-            else if ("D".equalsIgnoreCase(direction))
-                zPos--;
+        if (isMoveForward(commands)) {
+            moveForward();
         } else {
             if ("R".equalsIgnoreCase(command))
                 direction = "E";
             else
                 direction = "W";
         }
+    }
+
+    private void moveForward() {
+        if ("N".equalsIgnoreCase(direction))
+            yPos++;
+        else if ("E".equalsIgnoreCase(direction))
+            xPos++;
+        else if ("W".equalsIgnoreCase(direction))
+            xPos--;
+        else if ("S".equalsIgnoreCase(direction))
+            yPos--;
+        else if ("U".equalsIgnoreCase(direction))
+            zPos++;
+        else if ("D".equalsIgnoreCase(direction))
+            zPos--;
+    }
+
+    private boolean isMoveForward(List<String> commands) {
+        return "F".equalsIgnoreCase(commands.get(0));
     }
 
     public int getXPosition() {
