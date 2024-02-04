@@ -36,18 +36,22 @@ public class Chandrayaan {
         }
     }
 
+    private DirectionAbstract changeDirection(String command) {
+        if (isRightCommand(command))
+            return direction.getRightDirection();
+        return direction.getLeftDirection();
+    }
+
+    private boolean isRightCommand(String command) {
+        return R.equalsIgnoreCase(command);
+    }
+
     private void move(String command) {
         if (isForwardCommand(command)) {
             direction.moveForward(coOrdinates);
         } else {
             direction.moveBackward(coOrdinates);
         }
-    }
-
-    private DirectionAbstract changeDirection(String command) {
-        if (isRightCommand(command))
-            return direction.getRightDirection();
-        return direction.getLeftDirection();
     }
 
     private boolean isMoveCommand(String command) {
@@ -60,10 +64,6 @@ public class Chandrayaan {
 
     private boolean isForwardCommand(String command) {
         return F.equalsIgnoreCase(command);
-    }
-
-    private boolean isRightCommand(String command) {
-        return R.equalsIgnoreCase(command);
     }
 
 }
