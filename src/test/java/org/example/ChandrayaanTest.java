@@ -2,7 +2,6 @@ package org.example;
 
 import org.example.direction.*;
 import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
 
@@ -498,25 +497,6 @@ class ChandrayaanTest {
 
             DirectionAbstract direction = chandrayaan.getDirection();
             Assertions.assertEquals(NorthDirection.class, direction.getClass());
-        }
-    }
-
-    @Nested
-    class CombinedCommandTest {
-        @Test
-        @Disabled("ToDo: need to handle up and down command in change direction")
-        void testInput1() {
-            CoOrdinates coOrdinates = new CoOrdinates(0, 0, 0);
-            Chandrayaan chandrayaan = new Chandrayaan(coOrdinates, NorthDirection.createInstance());
-            List<String> commands = List.of("f", "r", "u", "b", "l");
-
-            chandrayaan.executeCommands(commands);
-
-            DirectionAbstract directionAbstract = chandrayaan.getDirection();
-            Assertions.assertEquals(NorthDirection.class, directionAbstract.getClass());
-
-            CoOrdinates expectedCoOrdinates = new CoOrdinates(0, 1, -1);
-            Assertions.assertEquals(expectedCoOrdinates, chandrayaan.getCoOrdinates());
         }
     }
 }
