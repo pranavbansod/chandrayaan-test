@@ -7,8 +7,8 @@ public class Chandrayaan {
     private final CoOrdinates coOrdinates;
     private final AngularDirection angularDirection;
 
-    public Chandrayaan(CoOrdinates coOrdinates, String direction, AngularDirection angularDirection) {
-        this.direction = Direction.valueOf(direction);
+    public Chandrayaan(CoOrdinates coOrdinates, Direction direction, AngularDirection angularDirection) {
+        this.direction = direction;
         this.coOrdinates = coOrdinates;
         this.angularDirection = angularDirection;
     }
