@@ -9,6 +9,13 @@ public enum AngularDirection {
         else if (D.equals(this))
             coOrdinates.decrementZ();
     }
+
+    void moveBackward(CoOrdinates coOrdinates) {
+        if (U.equals(this))
+            coOrdinates.decrementZ();
+        else if (D.equals(this))
+            coOrdinates.incrementZ();
+    }
 }
 
 

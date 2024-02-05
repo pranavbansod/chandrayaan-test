@@ -2,9 +2,6 @@ package org.example;
 
 import java.util.List;
 
-import static org.example.AngularDirection.D;
-import static org.example.AngularDirection.U;
-
 public class Chandrayaan {
     private Direction direction;
     private final CoOrdinates coOrdinates;
@@ -47,15 +44,8 @@ public class Chandrayaan {
         if (isForwardCommand(command)) {
             angularDirection.moveForward(coOrdinates);
         } else {
-            moveBackwardInAngularDirection();
+            angularDirection.moveBackward(coOrdinates);
         }
-    }
-
-    private void moveBackwardInAngularDirection() {
-        if (U.equals(angularDirection))
-            coOrdinates.decrementZ();
-        else if (D.equals(angularDirection))
-            coOrdinates.incrementZ();
     }
 
     private void moveInPlanerDirection(String command) {
