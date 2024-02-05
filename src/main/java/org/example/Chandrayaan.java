@@ -21,8 +21,8 @@ public class Chandrayaan {
         return coOrdinates;
     }
 
-    public Direction getDirection() {
-        return direction;
+    public String getDirection() {
+        return direction.toString();
     }
 
     public void executeCommands(List<String> commands) {

@@ -1,17 +1,13 @@
 package org.example;
 
 import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
 
 import java.util.List;
 
-import static org.example.Direction.D;
-import static org.example.Direction.N;
-import static org.example.Direction.E;
-import static org.example.Direction.W;
-import static org.example.Direction.S;
-import static org.example.Direction.U;
+import static org.example.Direction.*;
 
 class ChandrayaanTest {
 
@@ -178,7 +174,7 @@ class ChandrayaanTest {
 
             CoOrdinates coOrdinates = new CoOrdinates(0, -1, 0);
             Chandrayaan chandrayaan = new Chandrayaan(coOrdinates, N);
-            List<String> commands = List.of("f","f","f");
+            List<String> commands = List.of("f", "f", "f");
 
             chandrayaan.executeCommands(commands);
 
@@ -351,7 +347,7 @@ class ChandrayaanTest {
 
             CoOrdinates coOrdinates = new CoOrdinates(0, -1, 0);
             Chandrayaan chandrayaan = new Chandrayaan(coOrdinates, N);
-            List<String> commands = List.of("b","b","b");
+            List<String> commands = List.of("b", "b", "b");
 
             chandrayaan.executeCommands(commands);
 
@@ -372,7 +368,7 @@ class ChandrayaanTest {
 
             chandrayaan.executeCommands(commands);
 
-            Assertions.assertEquals(E, chandrayaan.getDirection());
+            Assertions.assertEquals("E", chandrayaan.getDirection());
         }
 
         @Test
@@ -384,7 +380,7 @@ class ChandrayaanTest {
 
             chandrayaan.executeCommands(commands);
 
-            Assertions.assertEquals(W, chandrayaan.getDirection());
+            Assertions.assertEquals("W", chandrayaan.getDirection());
         }
 
         @Test
@@ -396,7 +392,7 @@ class ChandrayaanTest {
 
             chandrayaan.executeCommands(commands);
 
-            Assertions.assertEquals(S, chandrayaan.getDirection());
+            Assertions.assertEquals("S", chandrayaan.getDirection());
         }
 
         @Test
@@ -408,7 +404,7 @@ class ChandrayaanTest {
 
             chandrayaan.executeCommands(commands);
 
-            Assertions.assertEquals(N, chandrayaan.getDirection());
+            Assertions.assertEquals("N", chandrayaan.getDirection());
         }
 
         @Test
@@ -420,7 +416,7 @@ class ChandrayaanTest {
 
             chandrayaan.executeCommands(commands);
 
-            Assertions.assertEquals(W, chandrayaan.getDirection());
+            Assertions.assertEquals("W", chandrayaan.getDirection());
         }
 
         @Test
@@ -432,7 +428,7 @@ class ChandrayaanTest {
 
             chandrayaan.executeCommands(commands);
 
-            Assertions.assertEquals(E, chandrayaan.getDirection());
+            Assertions.assertEquals("E", chandrayaan.getDirection());
         }
 
         @Test
@@ -444,7 +440,7 @@ class ChandrayaanTest {
 
             chandrayaan.executeCommands(commands);
 
-            Assertions.assertEquals(N, chandrayaan.getDirection());
+            Assertions.assertEquals("N", chandrayaan.getDirection());
         }
 
         @Test
@@ -456,7 +452,7 @@ class ChandrayaanTest {
 
             chandrayaan.executeCommands(commands);
 
-            Assertions.assertEquals(S, chandrayaan.getDirection());
+            Assertions.assertEquals("S", chandrayaan.getDirection());
         }
 
         @Test
@@ -468,7 +464,7 @@ class ChandrayaanTest {
 
             chandrayaan.executeCommands(commands);
 
-            Assertions.assertEquals(E, chandrayaan.getDirection());
+            Assertions.assertEquals("E", chandrayaan.getDirection());
         }
 
         @Test
@@ -480,7 +476,7 @@ class ChandrayaanTest {
 
             chandrayaan.executeCommands(commands);
 
-            Assertions.assertEquals(S, chandrayaan.getDirection());
+            Assertions.assertEquals("S", chandrayaan.getDirection());
         }
 
         @Test
@@ -491,7 +487,25 @@ class ChandrayaanTest {
 
             chandrayaan.executeCommands(commands);
 
-            Assertions.assertEquals(N, chandrayaan.getDirection());
+            Assertions.assertEquals("N", chandrayaan.getDirection());
+        }
+
+    }
+
+    @Nested
+    class CombinedCommandTest {
+        @Test
+        @Disabled("need to enable after handling angular direction")
+        void testInput1() {
+            CoOrdinates coOrdinates = new CoOrdinates(0, 0, 0);
+            Chandrayaan chandrayaan = new Chandrayaan(coOrdinates, N);
+            List<String> commands = List.of("f", "r", "u", "b", "l");
+
+            chandrayaan.executeCommands(commands);
+
+            CoOrdinates expectedCoOrdinates = new CoOrdinates(0, 1, -1);
+            Assertions.assertEquals(expectedCoOrdinates, chandrayaan.getCoOrdinates());
+            Assertions.assertEquals("N", chandrayaan.getDirection());
         }
     }
 }
