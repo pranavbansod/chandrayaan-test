@@ -61,8 +61,10 @@ public class Chandrayaan {
     private void changeDirection(String command) {
         if (isAngularDirectionCommand(command))
             angularDirection = angularDirection.changeAngularDirection(command);
-        else
+        else {
             direction = direction.changeDirection(command);
+            angularDirection = AngularDirection.NONE;
+        }
     }
 
     private boolean isMoveCommand(String command) {

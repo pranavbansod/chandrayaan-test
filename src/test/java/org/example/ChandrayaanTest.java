@@ -566,7 +566,6 @@ class ChandrayaanTest {
     @Nested
     class CombinedCommandTest {
         @Test
-        @Disabled("need to enable after handling angular direction")
         void testInput1() {
             CoOrdinates coOrdinates = new CoOrdinates(0, 0, 0);
             Chandrayaan chandrayaan = new Chandrayaan(coOrdinates, N, AngularDirection.NONE);
