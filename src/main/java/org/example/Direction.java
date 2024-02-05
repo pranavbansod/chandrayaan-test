@@ -1,7 +1,7 @@
 package org.example;
 
 public enum Direction {
-    E, W, N, S, U, D;
+    E, W, N, S;
 
     Direction changeDirection(String command) {
         if (N.equals(this)) {

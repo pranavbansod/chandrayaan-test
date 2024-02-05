@@ -2,21 +2,21 @@ package org.example;
 
 import java.util.List;
 
-import static org.example.Direction.N;
-import static org.example.Direction.E;
-import static org.example.Direction.W;
-import static org.example.Direction.S;
-import static org.example.Direction.U;
-import static org.example.Direction.D;
+import static org.example.AngularDirection.D;
+import static org.example.AngularDirection.U;
+import static org.example.Direction.*;
 
 public class Chandrayaan {
     private Direction direction;
     private final CoOrdinates coOrdinates;
+    private final AngularDirection angularDirection;
 
-    public Chandrayaan(CoOrdinates coOrdinates, String direction) {
+    public Chandrayaan(CoOrdinates coOrdinates, String direction, AngularDirection angularDirection) {
         this.direction = Direction.valueOf(direction);
         this.coOrdinates = coOrdinates;
+        this.angularDirection = angularDirection;
     }
+
     public CoOrdinates getCoOrdinates() {
         return coOrdinates;
     }
@@ -38,6 +38,35 @@ public class Chandrayaan {
     }
 
     private void move(String command) {
+        if (AngularDirection.NONE.equals(angularDirection))
+            moveInPlanerDirection(command);
+        else
+            moveInAngularDirection(command);
+    }
+
+    private void moveInAngularDirection(String command) {
+        if (isForwardCommand(command)) {
+            moveForwardInAngularDirection();
+        } else {
+            moveBackwardInAngularDirection();
+        }
+    }
+
+    private void moveForwardInAngularDirection() {
+        if (U.equals(angularDirection))
+            coOrdinates.incrementZ();
+        else if (D.equals(angularDirection))
+            coOrdinates.decrementZ();
+    }
+
+    private void moveBackwardInAngularDirection() {
+        if (U.equals(angularDirection))
+            coOrdinates.decrementZ();
+        else if (D.equals(angularDirection))
+            coOrdinates.incrementZ();
+    }
+
+    private void moveInPlanerDirection(String command) {
         if (isForwardCommand(command)) {
             moveForward();
         } else {
@@ -54,10 +83,6 @@ public class Chandrayaan {
             coOrdinates.decrementX();
         else if (S.equals(direction))
             coOrdinates.decrementY();
-        else if (U.equals(direction))
-            coOrdinates.incrementZ();
-        else if (D.equals(direction))
-            coOrdinates.decrementZ();
     }
 
     private void moveBackward() {
@@ -69,10 +94,6 @@ public class Chandrayaan {
             coOrdinates.incrementX();
         else if (S.equals(direction))
             coOrdinates.incrementY();
-        else if (U.equals(direction))
-            coOrdinates.decrementZ();
-        else if (D.equals(direction))
-            coOrdinates.incrementZ();
     }
 
     private boolean isMoveCommand(String command) {
