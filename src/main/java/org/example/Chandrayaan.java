@@ -60,27 +60,9 @@ public class Chandrayaan {
 
     private void changeDirection(String command) {
         if (isAngularDirectionCommand(command))
-            angularDirection = changeAngularDirection(command);
+            angularDirection = angularDirection.changeAngularDirection(command);
         else
             direction = direction.changeDirection(command);
-    }
-
-    private AngularDirection changeAngularDirection(String command) {
-        if (isUpCommand(command)) {
-            return rotateUp();
-        } else
-            return rotateDown();
-    }
-
-    private AngularDirection rotateUp() {
-        if (AngularDirection.NONE.equals(angularDirection) || AngularDirection.U.equals(angularDirection))
-            return AngularDirection.U;
-        return AngularDirection.NONE;
-    }
-    private AngularDirection rotateDown() {
-        if (AngularDirection.NONE.equals(angularDirection) || AngularDirection.D.equals(angularDirection))
-            return AngularDirection.D;
-        return AngularDirection.NONE;
     }
 
     private boolean isMoveCommand(String command) {
@@ -96,15 +78,11 @@ public class Chandrayaan {
     }
 
     private  boolean isAngularDirectionCommand(String command) {
-        return isUpCommand(command) || isDownCommand(command);
+        return "U".equalsIgnoreCase(command) || isDownCommand(command);
     }
 
     private boolean isDownCommand(String command) {
         return "D".equalsIgnoreCase(command);
-    }
-
-    private boolean isUpCommand(String command) {
-        return "U".equalsIgnoreCase(command);
     }
 
 }
