@@ -68,21 +68,10 @@ public class Chandrayaan {
 
     private void moveInPlanerDirection(String command) {
         if (isForwardCommand(command)) {
-            moveForward();
+            direction.moveForward(coOrdinates);
         } else {
             moveBackward();
         }
-    }
-
-    private void moveForward() {
-        if (N.equals(direction))
-            coOrdinates.incrementY();
-        else if (E.equals(direction))
-            coOrdinates.incrementX();
-        else if (W.equals(direction))
-            coOrdinates.decrementX();
-        else if (S.equals(direction))
-            coOrdinates.decrementY();
     }
 
     private void moveBackward() {

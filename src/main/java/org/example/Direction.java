@@ -42,6 +42,17 @@ public enum Direction {
         else
             return S;
     }
+
+    void moveForward(CoOrdinates coOrdinates) {
+        if (N.equals(this))
+            coOrdinates.incrementY();
+        else if (E.equals(this))
+            coOrdinates.incrementX();
+        else if (W.equals(this))
+            coOrdinates.decrementX();
+        else if (S.equals(this))
+            coOrdinates.decrementY();
+    }
 }
 
 
