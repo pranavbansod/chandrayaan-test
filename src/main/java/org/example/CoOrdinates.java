@@ -8,6 +8,15 @@ public class CoOrdinates {
     private int z;
 
     @Override
+    public String toString() {
+        return "CoOrdinates{" +
+                "x=" + x +
+                ", y=" + y +
+                ", z=" + z +
+                '}';
+    }
+
+    @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
