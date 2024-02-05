@@ -528,6 +528,39 @@ class ChandrayaanTest {
 
             Assertions.assertEquals("N", chandrayaan.getDirection());
         }
+
+        @Test
+        void shouldChangeDirectionFromNorthToDownDirectionOnDCommand() {
+            CoOrdinates coOrdinates = new CoOrdinates(0, 0, 0);
+            Chandrayaan chandrayaan = new Chandrayaan(coOrdinates, N, AngularDirection.NONE);
+            List<String> commands = List.of("d");
+
+            chandrayaan.executeCommands(commands);
+
+            Assertions.assertEquals("D", chandrayaan.getDirection());
+        }
+
+        @Test
+        void shouldChangeDirectionFromNorthToDownDirectionOnUCommandWhenAlreadyDown() {
+            CoOrdinates coOrdinates = new CoOrdinates(0, 0, 0);
+            Chandrayaan chandrayaan = new Chandrayaan(coOrdinates, N, AngularDirection.D);
+            List<String> commands = List.of("d");
+
+            chandrayaan.executeCommands(commands);
+
+            Assertions.assertEquals("D", chandrayaan.getDirection());
+        }
+
+        @Test
+        void shouldChangeDirectionFromUpToNorthDirectionOnDCommand() {
+            CoOrdinates coOrdinates = new CoOrdinates(0, 0, 0);
+            Chandrayaan chandrayaan = new Chandrayaan(coOrdinates, N, AngularDirection.U);
+            List<String> commands = List.of("d");
+
+            chandrayaan.executeCommands(commands);
+
+            Assertions.assertEquals("N", chandrayaan.getDirection());
+        }
     }
 
     @Nested
