@@ -13,8 +13,8 @@ public class Chandrayaan {
     private Direction direction;
     private final CoOrdinates coOrdinates;
 
-    public Chandrayaan(CoOrdinates coOrdinates, Direction direction) {
-        this.direction = direction;
+    public Chandrayaan(CoOrdinates coOrdinates, String direction) {
+        this.direction = Direction.valueOf(direction);
         this.coOrdinates = coOrdinates;
     }
     public CoOrdinates getCoOrdinates() {
