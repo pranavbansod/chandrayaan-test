@@ -495,6 +495,42 @@ class ChandrayaanTest {
     }
 
     @Nested
+    class AngularDirectionTest {
+        @Test
+        void shouldChangeDirectionFromNorthToUpDirectionOnUCommand() {
+            CoOrdinates coOrdinates = new CoOrdinates(0, 0, 0);
+            Chandrayaan chandrayaan = new Chandrayaan(coOrdinates, N, AngularDirection.NONE);
+            List<String> commands = List.of("u");
+
+            chandrayaan.executeCommands(commands);
+
+            Assertions.assertEquals("U", chandrayaan.getDirection());
+        }
+
+        @Test
+        void shouldChangeDirectionFromNorthToUpDirectionOnUCommandWhenAlreadyUp() {
+            CoOrdinates coOrdinates = new CoOrdinates(0, 0, 0);
+            Chandrayaan chandrayaan = new Chandrayaan(coOrdinates, N, AngularDirection.U);
+            List<String> commands = List.of("u");
+
+            chandrayaan.executeCommands(commands);
+
+            Assertions.assertEquals("U", chandrayaan.getDirection());
+        }
+
+        @Test
+        void shouldChangeDirectionFromDownToNorthDirectionOnUCommand() {
+            CoOrdinates coOrdinates = new CoOrdinates(0, 0, 0);
+            Chandrayaan chandrayaan = new Chandrayaan(coOrdinates, N, AngularDirection.D);
+            List<String> commands = List.of("u");
+
+            chandrayaan.executeCommands(commands);
+
+            Assertions.assertEquals("N", chandrayaan.getDirection());
+        }
+    }
+
+    @Nested
     class CombinedCommandTest {
         @Test
         @Disabled("need to enable after handling angular direction")

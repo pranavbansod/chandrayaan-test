@@ -5,7 +5,7 @@ import java.util.List;
 public class Chandrayaan {
     private Direction direction;
     private final CoOrdinates coOrdinates;
-    private final AngularDirection angularDirection;
+    private AngularDirection angularDirection;
 
     public Chandrayaan(CoOrdinates coOrdinates, Direction direction, AngularDirection angularDirection) {
         this.direction = direction;
@@ -18,7 +18,9 @@ public class Chandrayaan {
     }
 
     public String getDirection() {
-        return direction.toString();
+        if (AngularDirection.NONE.equals(angularDirection))
+            return direction.toString();
+        return angularDirection.toString();
     }
 
     public void executeCommands(List<String> commands) {
@@ -29,8 +31,21 @@ public class Chandrayaan {
         if (isMoveCommand(command)) {
             move(command);
         } else {
-            direction = direction.changeDirection(command);
+            changeDirection(command);
         }
+    }
+
+    private void changeDirection(String command) {
+        if ("U".equalsIgnoreCase(command))
+            angularDirection = changeAngularDirection();
+        else
+            direction = direction.changeDirection(command);
+    }
+
+    private AngularDirection changeAngularDirection() {
+        if (AngularDirection.NONE.equals(angularDirection) || AngularDirection.U.equals(angularDirection))
+            return AngularDirection.U;
+        return AngularDirection.NONE;
     }
 
     private void move(String command) {
