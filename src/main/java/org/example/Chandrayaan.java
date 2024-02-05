@@ -45,17 +45,10 @@ public class Chandrayaan {
 
     private void moveInAngularDirection(String command) {
         if (isForwardCommand(command)) {
-            moveForwardInAngularDirection();
+            angularDirection.moveForward(coOrdinates);
         } else {
             moveBackwardInAngularDirection();
         }
-    }
-
-    private void moveForwardInAngularDirection() {
-        if (U.equals(angularDirection))
-            coOrdinates.incrementZ();
-        else if (D.equals(angularDirection))
-            coOrdinates.decrementZ();
     }
 
     private void moveBackwardInAngularDirection() {
