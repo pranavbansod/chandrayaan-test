@@ -3,11 +3,15 @@ package org.example;
 public enum Direction {
     E, W, N, S;
 
-    void moveForward(CoOrdinates coOrdinates) {
-        if (N.equals(this))
-            coOrdinates.incrementY();
-        else if (E.equals(this))
-            coOrdinates.incrementX();
+    void moveForward(CoOrdinates coOrdinates, Boundary boundary) {
+        if (N.equals(this)) {
+            if (!boundary.hasCrossedY(coOrdinates.getY() + 1))
+                coOrdinates.incrementY();
+        }
+        else if (E.equals(this)){
+            if (!boundary.hasCrossedX(coOrdinates.getX() + 1))
+                coOrdinates.incrementX();
+        }
         else if (W.equals(this))
             coOrdinates.decrementX();
         else if (S.equals(this))

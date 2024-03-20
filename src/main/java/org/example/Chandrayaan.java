@@ -6,11 +6,13 @@ public class Chandrayaan {
     private Direction direction;
     private final CoOrdinates coOrdinates;
     private AngularDirection angularDirection;
+    private final Boundary boundary;
 
-    public Chandrayaan(CoOrdinates coOrdinates, Direction direction, AngularDirection angularDirection) {
+    public Chandrayaan(CoOrdinates coOrdinates, Direction direction, AngularDirection angularDirection, Boundary boundary) {
         this.direction = direction;
         this.coOrdinates = coOrdinates;
         this.angularDirection = angularDirection;
+        this.boundary = boundary;
     }
 
     public CoOrdinates getCoOrdinates() {
@@ -44,7 +46,7 @@ public class Chandrayaan {
 
     private void moveInAngularDirection(String command) {
         if (isForwardCommand(command)) {
-            angularDirection.moveForward(coOrdinates);
+            angularDirection.moveForward(coOrdinates, boundary);
         } else {
             angularDirection.moveBackward(coOrdinates);
         }
@@ -52,7 +54,7 @@ public class Chandrayaan {
 
     private void moveInPlanerDirection(String command) {
         if (isForwardCommand(command)) {
-            direction.moveForward(coOrdinates);
+            direction.moveForward(coOrdinates, boundary);
         } else {
             direction.moveBackward(coOrdinates);
         }
