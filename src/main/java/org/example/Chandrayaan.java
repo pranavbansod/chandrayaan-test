@@ -53,9 +53,9 @@ public class Chandrayaan {
     }
 
     private void moveInPlanerDirection(String command) {
-        if (isForwardCommand(command)) {
-            direction.moveForward(coOrdinates, boundary);
-        } else {
+        if (isForwardCommand(command) && boundary.hasNotCrossed(coOrdinates, direction)) {
+            direction.moveForward(coOrdinates);
+        } else if (isBackwardCommand(command)) {
             direction.moveBackward(coOrdinates);
         }
     }
@@ -81,7 +81,7 @@ public class Chandrayaan {
         return "F".equalsIgnoreCase(command);
     }
 
-    private  boolean isAngularDirectionCommand(String command) {
+    private boolean isAngularDirectionCommand(String command) {
         return "U".equalsIgnoreCase(command) || isDownCommand(command);
     }
 

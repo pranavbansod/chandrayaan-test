@@ -1,5 +1,8 @@
 package org.example;
 
+import static org.example.Direction.E;
+import static org.example.Direction.N;
+
 public class Boundary {
     private final int x;
     private final int y;
@@ -21,5 +24,14 @@ public class Boundary {
 
     public boolean hasCrossedZ(int value) {
         return z < value;
+    }
+
+    public boolean hasNotCrossed(CoOrdinates coOrdinates, Direction direction) {
+        if (N.equals(direction)) {
+            return !hasCrossedY(coOrdinates.getY() + 1);
+        } else if (E.equals(direction)) {
+            return !hasCrossedX(coOrdinates.getX() + 1);
+        }
+        return true;
     }
 }

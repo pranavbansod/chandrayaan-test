@@ -197,7 +197,7 @@ class ChandrayaanTest {
         }
 
         @Test
-        void shouldNotMoveForwardFacingEasrBeyondGivenBoundary() {
+        void shouldNotMoveForwardFacingEastBeyondGivenBoundary() {
 
             CoOrdinates coOrdinates = new CoOrdinates(10, 0, 0);
             Boundary boundary = new Boundary(10, 10, 10);
